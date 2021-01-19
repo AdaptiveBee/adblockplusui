@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Angiv en gyldig URL-adresse"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL-adressen skal starte med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Tilføj en filterliste"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Af sikkerhedsårsager er det kun muligt at tilføje <strong>HTTPS</strong>-filterlister og <strong>data</strong>-URL-adresser."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Der opstod en fejl"
   },
   "options_dialog_language_other_empty": {
     "message": "Der er ingen tilgængelige sprog."
@@ -114,7 +128,13 @@
     "message": "Vælg et sprog"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Ja, brug denne filterliste"
+    "message": "Ja, tilføj denne filterliste"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL-adresse"
   },
   "options_dialog_predefined_title": {
     "message": "Er du sikker på, at du vil tilføje denne filterliste?"
@@ -141,7 +161,7 @@
     "message": "Hver Adblock Plus-indstilling virker på grund af en filterliste. Nedenfor er de filterlister, der svarer til alle dine Adblock Plus-indstillinger. Du kan også tilføje ekstra filtre oprettet og vedligeholdt af vores betroede fællesskab."
   },
   "options_filterList_empty": {
-    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filtrerlister, du tilføjer, bliver vist her."
+    "message": "Du har ikke tilføjet nogen filterlister til Adblock Plus. Filterlister, du tilføjer, bliver vist her."
   },
   "options_filterList_hours": {
     "message": "timer siden"
@@ -150,16 +170,24 @@
     "message": "Der opstod en fejl: Der er en uoverensstemmelse i kontrolsummen"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Der opstod en fejl: Download mislykket"
+    "message": "Download mislykkedes"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Opdaterer"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Der opstod en fejl: Ikke en gyldig filterliste"
+    "message": "Ikke en gyldig filterliste"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Der opstod en fejl: Ikke en gyldig adresse"
+    "message": "Ikke en gyldig adresse. Kontrollér URL-adressen."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download mislykkedes. URL-adressen skal starte med $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minutter siden"
@@ -168,7 +196,7 @@
     "message": "Lige nu"
   },
   "options_filterList_source": {
-    "message": "kilde"
+    "message": "Kilde"
   },
   "options_filterList_title": {
     "message": "Filterlister"
@@ -177,10 +205,10 @@
     "message": "opdater alle filterlister"
   },
   "options_filterList_updateNow": {
-    "message": "opdater nu"
+    "message": "Opdatér nu"
   },
   "options_filterList_website": {
-    "message": "websted"
+    "message": "Websted"
   },
   "options_filter_list_rule": {
     "message": "Filterregel"
@@ -275,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Ikoner fra sociale medier på websteder, du besøger, giver sociale medienetværk mulighed for at opbygge en profil af dig baseret på dine internet-vaner - selv når du ikke klikker på dem. Hvis du vælger at skjule disse ikoner, kan du beskytte din profil."
   },
-  "options_rating_description": {
-    "message": "Brug et øjeblik på at hjælpe med at sprede budskabet ved at bedømme Adblock Plus. Tak for din støtte!"
-  },
-  "options_rating_title": {
-    "message": "Er du glad for Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "Fundet en fejl? <a>Send os en fejlrapport</a>"
   },
@@ -347,6 +369,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Websteder, som du har tillid til og ønsker at tillade annoncer på, vil blive vist her."
+  },
+  "options_whitelist_notification": {
+    "message": "Webstedet er nu hvidlistet."
   },
   "options_whitelist_placeholder_example": {
     "message": "f.eks. $domain$",

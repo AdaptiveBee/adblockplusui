@@ -6,30 +6,31 @@
     "$": "npm-dollar",
     "dev-build": "npm run $ bundle && npm run $ dev-build",
     "bundle": "npm run $ bundle",
-    "fonts-gen": "node build/font-generation/index.js",
+    "dist": "npm run icons-gen && npm run bundle",
+    "icons-gen": "node build/icons-generation/index.js",
     "lint": "npm run $ lint",
-    "postinstall": "npm run fonts-gen && npm run bundle",
-    "start": "http-server & npm run watch",
+    "start": "http-server",
     "test": "npm run $ test",
     "watch": "npm run $ watch",
-    "csv-export": "node build/csv-exporter/main.js -e",
-    "csv-import": "node build/csv-exporter/main.js -i",
-    "optimize.svg": "svgo --pretty -i $1",
-    "optimize.png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1"
+    "csv-export": "node build/locale-sync/csv/main.js -e",
+    "csv-import": "node build/locale-sync/csv/main.js -i && node build/locale-sync/normalize.js",
+    "test:end-to-end": "mocha test/end-to-end/main.js --timeout 15000 --delay"
   },
   "$": {
     "dev-build": [
       [
+        "echo $(tput bold)building ${1:-chrome}$(tput sgr0);",
         "cd ../adblockpluschrome;",
         "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
         "cd adblockpluscore;",
         "git pull --rebase origin $(git rev-parse --abbrev-ref HEAD);",
         "cd ../;",
-        "SKIP_DEPENDENCY_UPDATES=true ./build.py devenv -t chrome;",
+        "SKIP_DEPENDENCY_UPDATES=true python2 build.py devenv -t ${1:-chrome};",
         "cd ../adblockplusui;"
       ]
     ],
     "bundle": {
+      "composer": "$ create.css composer",
       "day1": [
         "$ create.bundle popup-dummy",
         "$ create.bundle day1"
@@ -49,14 +50,20 @@
         "css": "$ create.css issue-reporter",
         "js": "$ create.js ./js/issue-reporter.js ./issue-reporter.js"
       },
+      "mocks": [
+        "mkdir -p mocks/dist",
+        "$ create.js ./mocks/js/background.js ./mocks/dist/background.js"
+      ],
       "popup": "$ create.bundle popup",
+      "problem": "$ create.bundle problem",
       "test": [
         [
           "if [ ! -z $1 ]; then",
-          " echo \"/* eslint-disable */$(browserify --node ./tests/$1.js)\">./smoke/$1.js;",
+          " echo \"/* eslint-disable */$(browserify --node ./test/smoke/tests/$1.js)\">./smoke/$1.js;",
           "fi"
         ]
-      ]
+      ],
+      "updates": "$ create.bundle updates"
     },
     "create": {
       "bundle": {
@@ -64,10 +71,7 @@
         "js": "$ create.js ./js/$1.js ./$1.js"
       },
       "css": "node-sass ./css/$1.scss ./skin/$1.css",
-      "js": [
-        "!prod eslint ./js/**/*.js",
-        "echo \"/* eslint-disable */$(browserify --node $1)\">$2"
-      ],
+      "js": "echo \"/* eslint-disable */$(browserify --node $1)\">$2",
       "test": {
         "component": {
           "css": "$ create.test.css $1",
@@ -82,27 +86,36 @@
         ],
         "js": [
           "mkdir -p smoke",
-          "cp -R ./tests/{locale,background.html,$1.*} ./smoke"
+          "cp -R ./test/smoke/tests/{locale,background.html,$1.*} ./smoke"
         ]
       }
     },
     "crowdin": {
       "download-translations": [
-        "python build.py gettranslations $CROWDIN_API_KEY",
-        "npm run fonts-gen"
+        "find ./locale -mindepth 1 -not -path './locale/en_US' -not -path './locale/en_US/*' -delete",
+        "crowdin -k $CROWDIN_API_KEY download",
+        "for file in $(grep -rw './locale' -le '{}'); do rm $file; done",
+        "node build/locale-sync/normalize.js"
       ],
-      "upload-strings": "python build.py translate $CROWDIN_API_KEY",
-      "upload-translations": "python build.py uploadtrans $CROWDIN_API_KEY"
+      "upload-strings": "crowdin -k $CROWDIN_API_KEY upload sources",
+      "upload-translations": "crowdin -k $CROWDIN_API_KEY upload translations"
     },
     "lint": {
       "css": "stylelint ./build/**/*.css ./css/*.scss ./skin/*.css --ignore-path .gitignore",
-      "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js'",
+      "js": "eslint './*.js' './js/**/*.js' './lib/**/*.js' './ext/**/*.js' './build/**/*.js' './mocks/**/*.js' './test/**/*.js'",
       "locale": [
         "node build/locale-linter/test",
         "node build/locale-linter ./locale/**/*.json"
       ]
     },
+    "optimize": {
+      "gif": "gifsicle -o $1 $1",
+      "png": "pngquant --skip-if-larger --force --ext .png --speed 1 -- $1",
+      "svg": "svgo --pretty -i $1"
+    },
     "test": {
+      "unit": "mocha ./test/unit",
+      "integration": "mocha ./test/integration",
       "icons": "cp -R ./skin/icons ./smoke",
       "io-checkbox": "$ create.test.component io-checkbox",
       "io-element": {
@@ -118,7 +131,7 @@
         "css": [
           "$ create.test.css io-highlighter",
           "cp -R ./skin/icons smoke/css",
-          "cp ./tests/image.base64.txt ./smoke"
+          "cp ./test/smoke/tests/image.base64.txt ./smoke"
         ],
         "js": [
           "$ create.test.js io-highlighter",
@@ -127,39 +140,58 @@
       },
       "io-list-box": "$ create.test.component io-list-box",
       "io-popout": "$ create.test.component io-popout",
-      "io-rating": "$ create.test.component io-rating",
       "io-scrollbar": "$ create.test.component io-scrollbar",
       "io-steps": "$ create.test.component io-steps",
-      "io-toggle": "$ create.test.component io-toggle",
-      "io-big-toggle": "$ create.test.component io-big-toggle"
+      "io-toggle": "$ create.test.component io-toggle"
     },
     "watch": {
       "dev-build": "watch 'npm run dev-build' ./css ./js",
       "bundle": "watch 'npm run bundle' ./css ./js",
-      "test": "watch 'npm run test' ./css ./js",
-      "fonts-gen": "watch 'npm run fonts-gen' ./locale"
+      "test": "watch 'npm run test' ./css ./js"
+    },
+    "xtm": {
+      "create": "node build/locale-sync/xtm --create",
+      "details": "node build/locale-sync/xtm --details",
+      "update": "node build/locale-sync/xtm --update",
+      "build": "node build/locale-sync/xtm --build",
+      "download": [
+        "node build/locale-sync/xtm --download",
+        "node build/locale-sync/normalize.js"
+      ]
     }
   },
   "dependencies": {
     "browserify": "^16.2.3",
-    "document-register-element": "^1.13.1",
-    "hyperhtml-element": "^3.5.0",
-    "node-sass": "^4.10.0",
-    "npm-dollar": "^2.1.3",
-    "website-defaults": "github:adblockplus/website-defaults#255e4f1",
+    "canvas": "^2.6.0",
+    "document-register-element": "^1.14.3",
+    "glob": "^7.1.4",
+    "hyperhtml-element": "^3.12.2",
     "local-range": "^0.1.0",
-    "glob": "^7.1.3"
+    "node-sass": "^4.13.0",
+    "npm-dollar": "^2.2.1",
+    "pngquant-bin": "^5.0.2",
+    "website-defaults": "github:adblockplus/website-defaults#255e4f1"
   },
   "devDependencies": {
-    "csv": "^5.0.0",
-    "eslint": "^5.9.0",
-    "eslint-config-eyeo": "^2.1.0",
+    "adm-zip": "^0.4.13",
+    "basichtml": "^1.0.2",
+    "chromedriver": "^83.0.0",
+    "csv": "^5.1.2",
+    "eslint": "^6.2.1",
+    "eslint-config-eyeo": "^3.0.0",
+    "form-data": "^2.3.3",
+    "gifsicle": "^5.0.0",
+    "glob": "^7.1.2",
     "http-server": "^0.11.1",
-    "nightmare": "^3.0.1",
-    "pngquant": "^2.0.1",
-    "stylelint": "^9.9.0",
-    "stylelint-config-eyeo": "^1.0.2",
-    "svgo": "^1.2.0",
-    "watch": "^1.0.2"
+    "minimist": "^1.2.0",
+    "mocha": "^6.1.4",
+    "nightmare": "^3.0.2",
+    "node-fetch": "^2.3.0",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "stylelint": "^10.1.0",
+    "stylelint-config-eyeo": "^1.0.3",
+    "svgo": "^1.3.0",
+    "watch": "^1.0.2",
+    "xmldom": "^0.1.27"
   }
 }

@@ -1,4 +1,13 @@
 {
+  "options_aa_opt_out_survey": {
+    "message": "Untuk membantu kami memperbaiki Adblock Plus, Bolehkah anda memberitahu kami kenapa kamu mematikan iklan yang boleh diterima?"
+  },
+  "options_aa_opt_out_survey_no": {
+    "message": "Tidak, terima kasih"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Pergi ke kaji selidik"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Iklan yang boleh diterima tidak menjengkelkan dan tidak mengganggu kandungan yang anda lihat. <a>Baca lebih lanjut mengenai kriteria Iklan yang boleh diterima</a>"
   },
@@ -19,6 +28,9 @@
   },
   "options_advanced_description": {
     "message": "Peribadikan Adblock Plus, tambah atau keluarkan senarai penapis, buat dan kekalkan senarai penapis anda sendiri"
+  },
+  "options_builtin_filterList_add": {
+    "message": "Tambah senarai penapis terbina dalam"
   },
   "options_close": {
     "message": "TUTUP"
@@ -57,7 +69,7 @@
     "message": "Lihat item yang disekat dan disenarai putih dari panel alat pemaju pelayar anda."
   },
   "options_customize_showNotifications": {
-    "message": "Papar notifikasi berguna"
+    "message": "Papar notifikasi yang berguna"
   },
   "options_customize_showNotifications_tooltip": {
     "message": "Benarkan pemberitahuan dari Adblock Plus (pemberitahuan berkaitan masalah prestasi akan sentiasa ditunjukkan)."
@@ -92,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Masukkan URL yang sah"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL mesti dimulai dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Tambah senarai penapis"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Atas alasan keselamatan, hanya senarai penapis <strong>HTTPS</strong> dan URL <strong>data</strong> boleh ditambah."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ralat berlaku"
   },
   "options_dialog_language_other_empty": {
     "message": "Tiada bahasa yang tersedia."
@@ -103,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Ya, gunakan senarai penapis ini"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Tajuk"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Adakah anda pasti mahu menambah senarai penapis ini?"
@@ -149,6 +181,14 @@
   "options_filterList_lastDownload_invalidURL": {
     "message": "Gagal, bukan alamat yang sah"
   },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Muat turun gagal. URL mesti dimulai dengan $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_filterList_minutes": {
     "message": "minit yang lalu"
   },
@@ -190,6 +230,12 @@
   "options_general_description": {
     "message": "Tentukan apa yang ditunjukkan dan disembunyikan oleh Adblock Plus di laman web"
   },
+  "options_generic_error": {
+    "message": "Uh oh! Sesuatu yang salah terjadi. Sila cuba lagi."
+  },
+  "options_help_center": {
+    "message": "Mencari jawapan untuk persoalan anda? <a0>Lawat pusat bantuan kami (English only)</a0>"
+  },
   "options_help_description": {
     "message": "Cari bantuan atau berhubung dengan kami"
   },
@@ -205,8 +251,24 @@
   "options_language_empty": {
     "message": "Anda tidak mempunyai sebarang penapis khusus bahasa."
   },
+  "options_language_filter_list": {
+    "message": "Senarai Penapis Bahasa"
+  },
   "options_language_header": {
     "message": "Bahasa"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>PETUA:</strong> Hanya pilih bahasa yang anda perlukan. Memilih lebih banyak akan melambatkan penyekat iklan dan, oleh itu, kelajuan pelayaran anda."
@@ -307,6 +369,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Laman web yang anda percayai dan ingin membenarkan iklan akan dipaparkan di sini."
+  },
+  "options_whitelist_notification": {
+    "message": "Laman sesawang telah di senarai putihkan."
   },
   "options_whitelist_placeholder_example": {
     "message": "cth. $domain$",

@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Blocca elementi specifici su questo sito"
+  },
   "click_element_to_block_it": {
     "message": "Clicca su un elemento della pagina per bloccarlo."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Sei interessato ad Adblock Plus per cellulare?"
   },
+  "refresh_this_page": {
+    "message": "Aggiorna questa pagina"
+  },
   "refresh_to_take_effect": {
-    "message": "Clicca su <strong>Aggiorna</strong> affinché le modifiche siano applicate."
+    "message": "Fai clic sul pulsante qui sotto per rendere effettive le modifiche."
   },
   "sendReport": {
-    "message": "Segnala un problema"
+    "message": "Segnalare un problema su questa pagina"
+  },
+  "share_on_facebook": {
+    "message": "Condividi su Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Condividi su Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Ho bloccato $number$ annunci con Adblock Plus. Provalo, è GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Condividi su Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Ho bloccato $number$ annunci con Adblock Plus. Provalo, è GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Condividi i numeri con gli amici"
   },
   "stats_header": {
     "message": "Numero di elementi bloccati"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> su questa pagina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "su questa pagina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> in totale",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "in totale"
+  },
+  "status_domain": {
+    "message": "Questo sito web:"
   },
   "status_header": {
-    "message": "Blocco pubblicità attivo:"
+    "message": "Blocca gli annunci su"
+  },
+  "status_page": {
+    "message": "Questa pagina:"
   }
 }

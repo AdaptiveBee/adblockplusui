@@ -71,11 +71,14 @@
   "issueReporter_markIssueButton_label": {
     "message": "Marcar problema"
   },
+  "issueReporter_other_issues": {
+    "message": "Para tratar de todas as outras questões, entre em contato conosco pelo e-mail <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Relatório de erro"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Política de privacidade"
+    "message": "Política de Privacidade"
   },
   "issueReporter_processing_screenshot": {
     "message": "processando"

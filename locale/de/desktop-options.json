@@ -15,7 +15,7 @@
     "message": "Acceptable Ads erlauben?"
   },
   "options_acceptableAds_description": {
-    "message": "Acceptable Ads sind unaufdringliche Anzeigen. Sie bilden den Mittelweg zwischen dem Blockieren von Anzeigen und der Unterstützung von Online-Inhalten, da diese Einnahmen für Besitzer von Websites generieren."
+    "message": "Acceptable Ads sind unaufdringliche Anzeigen. Sie bilden den Mittelweg zwischen dem Blockieren von Anzeigen und der Unterstützung von Online-Inhalten, da diese Einnahmen für Besitzer von Webseiten generieren."
   },
   "options_acceptableAds_dnt_notification": {
     "message": "<strong>Hinweis:</strong> Du hast <strong>Do Not Track (DNT)</strong> (nicht verfolgen) in deinen Browser-Einstellungen deaktiviert. Damit diese Funktion ordnungsgemäß funktioniert, aktiviere bitte <strong>DNT</strong> in den Einstellungen deines Browsers. <a>Erfahre, wie du DNT aktivierst</a>"
@@ -39,7 +39,7 @@
     "message": "Entfernen"
   },
   "options_customFilter_cancel": {
-    "message": "ABBRECHEN"
+    "message": "Abbrechen"
   },
   "options_customFilters_description": {
     "message": "Erstelle und verwalte deine eigenen Filter, um zu beeinflussen, welche Inhalte Adblock Plus zulässt oder blockiert. <a0>Erfahre, wie man Filter schreibt (nur in englischer Sprache)</a0>"
@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Benachrichtigungen von Adblock Plus zulassen (Benachrichtigungen in Bezug auf kritische Leistungsprobleme werden immer angezeigt)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Informationen zu Adblock Plus"
   },
@@ -95,20 +104,40 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Gib eine gültige URL ein"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL muss mit $protocol$ beginnen.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Filterliste hinzufügen"
   },
+  "options_dialog_invalid_message": {
+    "message": "Aus Sicherheitsgründen können ausschließlich <strong>HTTPS</strong>-Filterlisten und <strong>data</strong>-URLs hinzugefügt werden."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ein Fehler ist aufgetreten"
+  },
   "options_dialog_language_other_empty": {
-    "message": "Es gibt keine verfügbaren Sprachen."
+    "message": "Es sind keine Sprachen verfügbar."
   },
   "options_dialog_language_title": {
     "message": "Wähle eine Sprache"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Ja, diese Filterliste verwenden"
+    "message": "Ja, diese Filterliste hinzufügen"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
   },
   "options_dialog_predefined_title": {
     "message": "Bist du sicher, dass du diese Filterliste hinzufügen möchtest?"
+  },
+  "options_donate_button": {
+    "message": "Spenden"
   },
   "options_email": {
     "message": "E-Mail:"
@@ -138,19 +167,27 @@
     "message": "vor Stunden"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "Fehler, Prüfsumme ist falsch, möglicherweise ein Übertragungsfehler"
+    "message": "Fehler, Prüfsumme ist falsch"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Fehler, Download fehlgeschlagen"
+    "message": "Download fehlgeschlagen"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualisierung"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Fehler, keine gültige Filterliste"
+    "message": "Ungültige Filterliste"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Fehler, ungültige Adresse"
+    "message": "Ungültige Adresse. Bitte überprüfe die URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download fehlgeschlagen. URL muss mit $protocol$ beginnen.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "vor Minuten"
@@ -171,7 +208,7 @@
     "message": "Jetzt aktualisieren"
   },
   "options_filterList_website": {
-    "message": "Website"
+    "message": "Webseite"
   },
   "options_filter_list_rule": {
     "message": "Filterregel"
@@ -191,7 +228,7 @@
     "message": "BEITRAGEN"
   },
   "options_general_description": {
-    "message": "Bestimmen, was Adblock Plus auf Websites anzeigt und ausblendet"
+    "message": "Bestimmen, was Adblock Plus auf Webseiten anzeigt und ausblendet"
   },
   "options_generic_error": {
     "message": "Oh-oh! Es gibt ein Problem. Bitte versuche es erneut."
@@ -219,6 +256,19 @@
   },
   "options_language_header": {
     "message": "Sprache"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>TIPP:</strong> Wähle nur die Sprachen aus, die du brauchst. Wenn du mehrere Sprachen wählst, verlangsamt das Adblock Plus und somit die Geschwindigkeit deines Browsers."
@@ -248,16 +298,13 @@
     "message": "DATENSCHUTZ UND SICHERHEIT"
   },
   "options_protection_privacy_tooltip": {
-    "message": "Schütze deine Privatsphäre vor bekannten Unternehmen, die deine Online-Aktivität auf den von dir besuchten Websites verfolgen könnten."
+    "message": "Schütze deine Privatsphäre vor bekannten Unternehmen, die deine Online-Aktivität auf den von dir besuchten Webseiten verfolgen könnten."
   },
   "options_protection_social_tooltip": {
-    "message": "Die Social-Media-Symbole auf den Websites, die du besuchst, ermöglicht es den Social-Media-Netzwerken, ein Profil basierend auf deinen Surfgewohnheiten zu erstellen - selbst, wenn du sie nicht anklickst. Wenn du diese Symbole ausblendest, kannst du dein Profil schützen."
+    "message": "Die Social-Media-Symbole auf den Webseiten, die du besuchst, ermöglicht es den Social-Media-Netzwerken, ein Profil basierend auf deinen Surfgewohnheiten zu erstellen - selbst, wenn du sie nicht anklickst. Wenn du diese Symbole ausblendest, kannst du dein Profil schützen."
   },
-  "options_rating_description": {
-    "message": "Nimm dir bitte einen Moment Zeit und bewerte Adblock Plus. Danke für deine Unterstützung!"
-  },
-  "options_rating_title": {
-    "message": "Gefällt dir Adblock Plus?"
+  "options_rating_button": {
+    "message": "Bewerte uns"
   },
   "options_report_bug": {
     "message": "Hast du einen Fehler gefunden? <a>Sende uns einen Fehlerbericht</a>"
@@ -270,6 +317,12 @@
   },
   "options_social_title": {
     "message": "Nimm Kontakt auf"
+  },
+  "options_supportUs_description": {
+    "message": "Bitte nimm dir einen Moment Zeit, um ABP zu bewerten oder für das Projekt zu spenden. Vielen Dank für deine Unterstützung!"
+  },
+  "options_supportUs_title": {
+    "message": "Gefällt dir Adblock Plus?"
   },
   "options_support_title": {
     "message": "Unterstützung"
@@ -284,7 +337,7 @@
     "message": "Hilfe"
   },
   "options_tab_whitelist": {
-    "message": "Websites auf der Whitelist"
+    "message": "Webseiten auf der Whitelist"
   },
   "options_tracking_warning_1": {
     "message": "Es scheint, dass du sowohl <strong>$tracking$</strong> als auch <strong>$acceptableAds$</strong> aktiviert hast.",
@@ -315,16 +368,16 @@
     "message": "Alles klar"
   },
   "options_whitelist_add": {
-    "message": "WEBSITE HINZUFÜGEN"
+    "message": "Webseite hinzufügen"
   },
   "options_whitelist_description": {
-    "message": "Du hast das Blockieren von Werbung auf diesen Websites deaktiviert und wirst auf ihnen Anzeigen sehen."
+    "message": "Du hast das Blockieren von Werbung auf diesen Webseiten deaktiviert und wirst auf ihnen Anzeigen sehen."
   },
   "options_whitelist_empty_1": {
-    "message": "Du hast keine Websites auf der Whitelist."
+    "message": "Du hast keine Webseiten auf der Whitelist."
   },
   "options_whitelist_empty_2": {
-    "message": "Hier werden Websites gezeigt, denen du vertraust und auf denen du Anzeigen zulassen möchtest."
+    "message": "Hier werden Webseiten gezeigt, denen du vertraust und auf denen du Anzeigen zulassen möchtest."
   },
   "options_whitelist_notification": {
     "message": "Die Webseite wurde auf die Whitelist gesetzt."

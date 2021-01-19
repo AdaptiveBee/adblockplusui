@@ -1,267 +1,204 @@
-Shared Adblock Plus UI code
-===========================
-
-The user interface elements defined in this repository will be used by various
-Adblock Plus products like Adblock Plus for Firefox. Their functionality can be
-tested within this repository, even though they might not work exactly the same
-as they will do in the final product.
-
-Installing dependencies
------------------------
-
-Both [python 2](https://www.python.org/downloads/) and [node](https://nodejs.org/en/), as well as [npm](https://www.npmjs.com), are required to contribute to this repository.
+# Adblock Plus UI
 
-If you are installing `node` in ArchLinux, please remember to install `npm` too.
+Welcome to the user interface repository for the Adblock Plus extension!
 
-After cloning this repository, enter into its folder and run: `npm install`.
+The main project is hosted on [GitLab][abp-ui] and, in addition to the user
+interface, the Adblock Plus extension also includes the Adblock Plus [web
+extension code][abp-webext] and [core functionality][abp-core].
 
-This should create and populate, both `./node_modules` folder and the `./buildtools` one.
+- [About Adblock Plus](#about-adblock-plus)
+- [Prerequisites](#prerequisites)
+- [UI elements](#ui-elements)
+- [Testing](#testing)
+- [Bundling](#bundling)
+- [Contributing](#contributing)
 
-**Note:** [devDependencies](https://docs.npmjs.com/files/package.json#devdependencies) are not preinstalled during extension build, use [dependencies](https://docs.npmjs.com/files/package.json#dependencies) instead.
+## About Adblock Plus
 
-Nightlies
----------
+Adblock Plus is a free extension that allows users to customize their web
+experience. Users can block annoying ads, disable tracking and lots more. It’s
+available for all major desktop browsers and for mobile devices. 
 
-Nightly builds for feature and release [branches](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/wikis/development-workflow#naming-schemes) can be found [here](https://wspee.gitlab.io/adblockplusui-nightlies/). See [#119 - ABP UI Nightlies](https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/119) for more information.
+Adblock Plus is an open source project licensed under [GPLv3][gpl3] and subject
+to its [Terms of Use][eyeo-terms]. [eyeo GmbH][eyeo] is the parent company of
+Adblock Plus.
 
-Directory structure
--------------------
+## Prerequisites
 
-* Top-level files:
-  * `firstRun.html` and `firstRun.js`: First-run page, see below
-  * `i18n.js`: Localization functions, should be included by all pages.
-  * `background.html`, `background.js`: Test implementation of the background
-    page, should *not be imported*.
-  * `desktop-options.html`, `desktop-options.js`: Options page, see below
-  * `subscriptions.xml`: Test subscription data, should *not be imported*
-  * `polyfill.js`: Browser API polyfills, should *not be imported*
-* `js` directory: new CommonJS modules/entry-points bundled to produce
-  top level pages. As example, `js/desktop-options.js` produces
-  `./desktop-options.js` [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
-  deployed within the extension.
-* `lib` directory: Modules to be used on the background page to expose
-  UI-related functionality.
-* `locale` directory: Localized strings, with one directory per locale. The
-  Firefox format for locale identifiers is used (xx-YY where xx is the language
-  code and YY the optional region code). The localization strings themselves are
-  stored in the JSON format, like the one used by Chrome extensions. There is
-  one JSON file per HTML page, file names of HTML page and JSON file should
-  match.
-* `skin` directory: CSS files and any additional resources (images and fonts)
-  required for these.
-* `ext` directory: Test implementation of the abstraction layer. This one should
-  *not to be imported*, these files should rather be replaced by
-  product-specific versions providing the same interface.
+To contribute to this project, you'll need:
 
-Testing
--------
+[Node](https://nodejs.org/en/) and npm
 
-In Firefox the HTML pages can be opened directly from the file system
-and should be fully functional. Due to security restrictions in Chrome, there
-you need to pass in the `--allow-file-access-from-files` command line flag when
-starting the application. Alternatively, you can run `npm start` and open
-the HTML pages under URL shown shown in the terminal (example: http://127.0.0.1:8080).
+**Important**: `Node` should come installed with `npm`. If it doesn't, you can
+download `npm` [here](https://www.npmjs.com/get-npm).
 
-You can pass along to underlying [http-server](https://www.npmjs.com/package/http-server)
-program any arguments via `--` as in:
-```sh
-npm start -- -p 5000 -c-1
-```
+**Tip**: If you're installing `node` in ArchLinux, please remember to install
+`npm`, too.
 
-Various aspects of the pages can be tested by setting parameters in the URL.
-The only universal parameter is `locale`, e.g. `?locale=es-AR`. This parameter
-overrides browser's locale which will be used by default.
+If you want to build the Adblock Plus extension, please refer to the
+[Adblock Plus for Chrome, Firefox, Edge and Opera README][abp-webext-readme] for
+additional requirements.
 
-Smoke Testing UI
-----------------
+After cloning this repository, open its folder and run `npm install`.
 
-The `./tests` folder contains essential files to test our Custom Elements
-in isolation. As it is done for the `io-element` one, you need to add
-at least an `io-element.js` test file and its `io-element.html` related page.
+## UI elements
 
-A package script entry such `"test:io-element.js"` should bundle the
-resulting page/component inside the `./smoke` folder.
+Specifications for Adblock Plus elements can be found in [eyeo's spec
+repository][abp-spec].
 
-Please read how it's done for `io-element` to know more.
+### UI pages
 
-Styled Components
------------------
+These are pages that users primarily interact with because they are exposed to
+them via the browser's UI.
 
-If a component depends in its CSS style in order to properly setup,
-it can use the `this.isStyled()` method if the following convention is used:
+- Bubble UI (popup)
+- Developer tools panel (devtools-panel)
+- Options
+  - Desktop (desktop-options)
+  - Mobile (Firefox) (mobile-options)
 
-```css
-/* generic component CSS root definition */
-io-generic-component
-{
-  --io-generic-component: ready;
-}
-```
+### Dialogs
 
-Only once that file and its property has been parsed the call to `this.isStyled()` returns true
-and you can delay initialization until such property is known.
+These are pages that are dedicated to a specific feature and can be accessed via
+UI pages.
 
+- Filter composer (composer)
+- Issue reporter (issue-reporter)
 
-Linting
--------
+### Landing pages
 
-You can lint all options via `npm run lint`.
+These are pages that cannot be accessed via UI pages. They are either directly
+or indirectly opened by the extension under certain conditions.
 
-You can also run specific target linting via `npm run $ lint.js` or, once available, via `npm run $ lint.css`.
+- Day 1 (day1)
+- First run (first-run)
+- Problem (problem)
+- Updates (updates)
 
-Remember, both `eslint` and `stylelint` can help fixing issues via `--fix` flag.
+### Helper pages
 
-You can try as example via [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
-which should be provided automatically when you install `npm`.
+These are pages that are part of another page. They are not meant to be shown on
+their own.
 
-```sh
-npx stylelint --fix skin/real-file-name.css
-```
+- Bubble UI dummy (popup-dummy)
+- Proxy (proxy)
 
-Bundling JS or CSS
-------------------
+### Additional extension functionality
 
-As it is for the `desktop-options` case, bundling is done via `package.json`
-script entries handled by `$` namespace and shortcut.
+These are parts of the extension logic which are running alongside the other
+extension code in the extension's background process.
 
-Such shortcut gives us easy access to all scripts
-defined within the `$` entry, and normalized per macOS / Linux / Windows envs.
+- Notifications
+- Preferences
 
-```js
-"bundle": {
-  "desktop-options": {
-    "js": [
-      "eslint js/desktop-options.js",
-      "$ create.js js/desktop-options.js desktop-options.js"
-    ],
-    "css": "$ create.css desktop-options"
-  }
-}
-```
+## Testing
 
-When omitted, all properties will be executed so that `npm run $ bundle.desktop-options` will pass through `.js` and `.css`.
+If you don't want to build the entire extension, you can open UI pages in a test
+environment using a local web server. This can be done by running npm start,
+which allows you to access the HTML pages under the URL shown in the terminal,
+e.g. http://127.0.0.1:8080.
 
+Various aspects of the pages can be tested by setting parameters in the URL (see
+[list of URL parameters](docs/test-env.md#url-parameters)).
 
-Optimizing Assets
------------------
+**Note**: You need to [create the bundles](#bundling) for the UI page(s) that
+you want to test.
 
-The `package.json` comes with dev dependencies such as [svgo](https://www.npmjs.com/package/svgo) or [pngquant](https://www.npmjs.com/package/pngquant).
+### Nightlies
 
-In order to optimize an entry you can either use `npm run optimize.svg skin/icons/abp-logo.svg` for SVGs, or `npm run optimize.png skin/icons/abp-128.png` for PNGs.
+Nightly builds for feature and release [branches][wiki-branches] can be found
+[on this page][abp-ui-nightlies].
 
+### Unit testing
 
-Watching
---------
+The `./test/unit` folder contains various unit tests files. Those can be run
+together with other tests via `npm test` or separately via `npm $ test.unit`.
 
-While developing, it is convenient to bundle automatically
-each time a source file is changed.
+## Integration testing
 
-As a team, we agreed on restructuring JS and CSS code inside the js folder,
-so that is watched, and each bundled created, every time there is a changes.
+The `./test/integration` folder contains various integration tests files. Those
+can be run together with other tests via `npm test` or separately via
+`npm $ test.integration`.
 
-Simply `npm run watch` to start watching for all changes.
+### Smoke testing
 
-Translations
-------------
+The `/test/smoke` folder contains essential files to test custom elements in
+isolation. As it's done for `io-element`, you need to add at least an
+`io-element.js` test file and its `io-element.html` related page.
 
-Translations for the strings in this project are managed using the online
-[Crowdin platform][crowdin]. To synchronise with Crowdin use commands
-below:
-- `CROWDIN_API_KEY="1111" npm run $ crowdin.upload-strings`
-  - Pushes all master(en_US) files to crowdin
-- `CROWDIN_API_KEY="1111" npm run $ crowdin.download-translations`
-  - Downloads translation updates from the Crowdin
-  - And generate fonts (see [Fonts generation](#fonts-generation))
-- `CROWDIN_API_KEY="1111" npm run $ crowdin.upload-translations`
-  - Pushes the translations to the crowdin
+You can run `npm run $ test:io-element.js` to create the HTML page inside the
+`/smoke` folder.
 
-**Note:** Use actual Crowdin project key instead of "1111".
+### End-to-end testing
 
-Translations CSV exporter
--------------------------
+The `./test/end-to-end/tests` folder contains various end-to-end tests. Run 
+`npm run test:end-to-end -- -p EXTENSION_PATH` in order to execute tests in the
+latest stable Chrome browser, where `EXTENSION_PATH` is path to the extension
+root folder. The `./test/end-to-end/config.js` file contains paths and
+descriptions of each executable test. In order to build the extension for
+testing purposes please refer to the
+[building Adblock Plus][abp-webext-readme-build] documentation.
 
-Translation agencies are using CSVs for translating priority language strings.
-CSV exporter helps keeping that files in sync with the project. 
+### Linting
 
-- `npm run csv-export -- [HASH]` - Uses old commit hash to create a CSV file
-  with the source string differences
-- `npm run csv-import -- [FILEPATH]` - Imports translations from the CSV file
+You can lint all files via `npm run lint` or lint only specific file types:
+- JavaScript: `npm run $ lint.js`
+- SASS: `npm run $ lint.css`
+- Translation files: `npm run $ lint.locale`
 
-Format of the exported CSV files:
+**Note**: Both `eslint` and `stylelint` can help fix issues via `--fix` flag.
+You can try the example below via [npx][npx] which should be automatically
+included when you install `npm`.
 
-| Type     | Filename     | StringID | Description          | Placeholders                | en_US         | af         | am  | ... |
-|----------|--------------|----------|----------------------|-----------------------------|---------------|------------|-----|-----|
-| Modified | options.json | cancel   | Cancel button label  |                             | Cancel        | Kanselleer | ይቅር | ... |
-| Added    | options.json | domain   | Domain input example | {"domain":{"content":"$1"}} | e.g. $domain$ |            |     | ... |
+`npx stylelint --fix skin/real-file-name.css`
 
-Fonts generation
-----------------
+## Bundling
 
-`npm run fonts-gen` - Generates font subsets and css file with `@font-face`
-  and `:lang()` rules using unicode ranges extracted from extension locales.
+Various files need to be generated before using the UI. When building the UI
+for inclusion in the extension, this is achieved using `npm run dist`.
 
-See `build/font-generation/config.js` for the script configuration.
+For usage [in the test environment](#testing), you can run `npm run bundle` to
+generate the various bundles for all [UI elements](#ui-elements) or
+`npm run $ bundle.<page ID>` to create only those that are necessary for a
+specific UI page.  Additionally, you need to run `npm run $ bundle.mocks` in
+order to create the bundle for the mocks that are being used in the test
+environment.
 
-firstRun.html
--------------
+Beyond that, this repository contains [various utilities][wiki-utils] that we
+rely on across our development process.
 
-This is the implementation of the Adblock Plus first-run page that will show up
-whenever changes are applied automatically to user's Adblock Plus configuration.
-This will usually happen when the user first installs Adblock Plus (initial
-setup), but it can also happen in case the user's settings get lost.
+## Release history
 
-To aid testing, the behavior of this page is affected by a number of URL
-parameters:
+[UI specific releases][abp-ui-tags]
 
-* `platform`, `platformVersion`, `application`, `applicationVersion`: sets
-  application parameters that are normally determined by Adblock Plus.
-* `dataCorrupted`, `filterlistsReinitialized`: setting these parameters to
-  `true` should trigger warnings referring to issues detected by Adblock Plus.
-* `blockedURLs`: a comma-separated list of URLs that should be considered
-  blocked (necessary to test the check for blocked scripts in sharing buttons).
+[Extension releases][abp-webext-releases]
 
-mobile-options.html
--------------------
+## Contributing
 
-This is a web extension implementation of the Adblock Plus for Firefox Mobile
-options page.
+This project follows the typical GitLab process:
 
-To aid testing, the behavior of this page is affected by a number of URL
-parameters:
+1. Fork it.
+2. Create your feature branch.
+3. Commit your changes.
+4. Push to the branch.
+5. Create a new merge request.
 
-* `addSubscription=true`: triggers a dialog for adding
-  subscriptions as initiated by clicking on an "abp:subscribe" link (use
-  `title-none` or `title-url` as its value for links that don't include a title)
-* `showPageOptions=true`: shows page-specific options
 
-desktop-options.html
---------------------
 
-This is the implementation of the Adblock Plus options page which is
-the primary UI for changing settings and for managing filter lists.
-
-To aid testing, the behavior of this page is affected by a number of URL
-parameters:
-
-* `addonVersion`: sets addon version application parameter that is used for
-  creating the link to the version-specific release notes
-* `addSubscription=true`: triggers a dialog for adding
-  subscriptions as initiated by clicking on an "abp:subscribe" link (use
-  `title-none` or `title-url` as its value for links that don't include a title)
-* `additionalSubscriptions`: A comma-separated list of subscription URLs that
-  simulates scenario of persistent filter lists preinstalled by administrators.
-* `filterError=true`: causes filter validation to fail, showing validation
-  errors when adding new filters on the options page
-* `blockedURLs`: a comma-separated list of URLs that should be considered
-  blocked (necessary to test the check for blocked scripts in sharing buttons).
-* `downloadStatus`: sets downloadStatus parameter for filter lists, can be used
-  to trigger various filter list download errors
-* `platform=chromium`: shows the opt-out for the developer tools panel
-
-issue-reporter.html?1
----------------------
-
-This is the implementation of the Adblock Plus issue reporter which collects
-data for reporting an issue to adblockplus.org.
-
-[crowdin]: https://crowdin.com
+[abp-core]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/
+[abp-spec]: https://gitlab.com/eyeo/specs/spec/tree/master/spec/abp
+[abp-ui]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/
+[abp-ui-nightlies]: https://wspee.gitlab.io/adblockplusui-nightlies/
+[abp-ui-tags]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/tags
+[abp-webext]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/
+[abp-webext-readme]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome/blob/master/README.md
+[abp-webext-readme-build]: https://gitlab.com/eyeo/adblockplus/adblockpluschrome#building
+[abp-webext-releases]: https://github.com/adblockplus/adblockpluschrome/releases
+[badge-pipeline-image]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/badges/master/pipeline.svg
+[badge-pipeline-link]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/commits/master
+[eyeo]: https://eyeo.com/
+[eyeo-terms]: https://adblockplus.org/terms
+[gpl3]: https://www.gnu.org/licenses/gpl.html
+[npx]: https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
+[wiki-branches]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/wikis/development-workflow#naming-schemes
+[wiki-utils]: https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/wikis/utilities

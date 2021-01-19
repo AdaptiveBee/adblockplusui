@@ -17,25 +17,21 @@
 
 "use strict";
 
-const {activeTab, setPref} = require("./popup.utils.js");
+const api = require("./api");
+const {setPref} = require("./popup.utils");
 const {wire} = require("./io-element");
 const {$} = require("./dom");
 
-activeTab
-  .then((tab) =>
-  {
-    return browser.runtime.sendMessage({
-      type: "notifications.get",
-      displayMethod: "popup",
-      url: tab.url
-    });
-  })
+api.notifications.get("popup")
   .then((notification) =>
   {
     if (notification)
+    {
       window.dispatchEvent(
         new CustomEvent("extension:notification", {detail: notification})
       );
+      api.notifications.seen();
+    }
   });
 
 // Using an event to make testing as easy as possible.
@@ -59,7 +55,7 @@ window.addEventListener(
     <div class="${"content " + notification.type}">
       <div>
         <h3 hidden="${!notification.texts.title}">
-          ${notification.texts.title}
+          <span>${notification.texts.title}</span>
         </h3>
         <p id="notification-message"></p>
         <hr>
@@ -84,7 +80,7 @@ window.addEventListener(
     insertMessage(
       messageElement,
       notification.texts.message,
-      notification.links.map((link) => `#${link}`)
+      (notification.links || []).map((link) => `#${link}`)
     );
 
     messageElement.addEventListener("click", evt =>
@@ -108,7 +104,8 @@ window.addEventListener(
         type: "notifications.clicked",
         id: notification.id,
         link: linkTarget
-      });
+      })
+      .then(() => window.close());
     });
 
     function dismiss(evt)

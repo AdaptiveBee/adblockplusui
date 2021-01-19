@@ -72,6 +72,11 @@
   if (!("runtime" in browser))
     browser.runtime = {};
 
+  browser.runtime.onMessage = {
+    addListener() {},
+    removeListener() {}
+  };
+
   browser.runtime.sendMessage = message =>
   {
     const messageId = ++maxMessageId;
@@ -160,8 +165,26 @@
     };
   }
 
+  function getTabURLFromQueryString()
+  {
+    if (window.top.location.search)
+    {
+      const params = window.top.location.search.substr(1).split("&");
+
+      for (const param of params)
+      {
+        const parts = param.split("=", 2);
+        if (parts.length == 2 && parts[0] === "pageURL")
+        {
+          return decodeURIComponent(parts[1]);
+        }
+      }
+    }
+    return "https://example.com";
+  }
+
   let tabCounter = 0;
-  let activeTab = getTab("https://example.com/");
+  let activeTab = getTab(getTabURLFromQueryString());
   const tabs = new Map([
     [activeTab.id, activeTab]
   ]);
@@ -172,7 +195,7 @@
   browser.tabs.captureVisibleTab = (tabId, options) =>
   {
     log(`Take screenshot of tab with ID ${tabId || activeTab.id}`);
-    return fetch("../tests/image.base64.txt")
+    return fetch("../test/smoke/tests/image.base64.txt")
       .then(body => body.text());
   };
 
@@ -210,8 +233,16 @@
 
   browser.tabs.getCurrent = () => Promise.resolve(activeTab);
 
+  browser.tabs.query = () => Promise.resolve(Array.from(tabs.values()));
+
   browser.tabs.onUpdated = {
     addListener() {}
+  };
+
+  browser.tabs.reload = (tabId) =>
+  {
+    log(`Reloaded tab: ${tabs.get(tabId).url}`);
+    return Promise.resolve();
   };
 
   browser.tabs.remove = (tabId) =>
@@ -219,6 +250,14 @@
     log(`Closed tab: ${tabs.get(tabId).url}`);
     tabs.delete(tabId);
     return Promise.resolve();
+  };
+
+  browser.tabs.sendMessage = (tabId, msg) =>
+  {
+    if (msg.type !== "composer.content.getState")
+      return;
+
+    return Promise.resolve({active: false});
   };
 
   browser.tabs.update = (tabId, options) =>

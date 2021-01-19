@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Zablokuj konkretne elementy na tej stronie"
+  },
   "click_element_to_block_it": {
     "message": "Kliknij element strony, aby go zablokować."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Interesuje cię Adblock Plus dla urządzeń przenośnych?"
   },
+  "refresh_this_page": {
+    "message": "Odśwież tę stronę"
+  },
   "refresh_to_take_effect": {
-    "message": "Kliknij <strong>Odśwież</strong>, aby zmiany zostały wprowadzone."
+    "message": "Kliknij poniższy przycisk, aby wprowadzić zmiany."
   },
   "sendReport": {
-    "message": "Zgłoś problem"
+    "message": "Zgłoś problem na tej stronie"
+  },
+  "share_on_facebook": {
+    "message": "Podziel się na Facebooku"
+  },
+  "share_on_twitter": {
+    "message": "Podziel się na Twitterze"
+  },
+  "share_on_twitter_message": {
+    "message": "Zablokowałem/am $number$ reklam z Adblock Plus. Też go wypróbuj - ZA DARMO!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Udostępnij na Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Zablokowałem/am $number$ reklam z Adblock Plus. Też go wypróbuj - ZA DARMO!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Podziel się tą liczbą ze znajomymi"
   },
   "stats_header": {
     "message": "Liczba zablokowanych elementów"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> na tej stronie",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "na tej stronie"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> łącznie",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "w sumie"
+  },
+  "status_domain": {
+    "message": "Ta strona internetowa:"
   },
   "status_header": {
-    "message": "Blokuje reklamy w:"
+    "message": "Blokuj reklamy na"
+  },
+  "status_page": {
+    "message": "Ta strona:"
   }
 }

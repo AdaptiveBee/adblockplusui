@@ -12,10 +12,13 @@
     "message": "App Adblock Browser"
   },
   "firstRun_control_description": {
-    "message": "Per impostazione predefinita potresti visualizzare alcune pubblicità non invadenti che rispettano <a0>rigorosi criteri</a0>. Definiamo queste pubblicità come pubblicità accettabili. Preferisci bloccare tutte le pubblicità? <a1>Disabilita le pubblicità accettabili</a1> nelle tue<a2> impostazioni</a2>."
+    "message": "Per impostazione predefinita potresti visualizzare alcune pubblicità non invadenti che rispettano <a0>rigorosi criteri</a0>. Definiamo queste pubblicità come pubblicità accettabili. Preferisci bloccare tutte le pubblicità? <a1>Disabilita le pubblicità accettabili</a1> nelle tue <a2>impostazioni</a2>."
   },
   "firstRun_control_title": {
     "message": "Sei tu a decidere"
+  },
+  "firstRun_donate": {
+    "message": "Fai una donazione"
   },
   "firstRun_fair_description": {
     "message": "Ti invitiamo a fare un utilizzo equo di Adblock Plus e a inserire siti web sulla white list. A seconda dei filtri utilizzati, comprendi e accetti la possibilità di produrre risultati indesiderati (es. blocco del contenuto di una pagina web). Fai riferimento ai <a0>termini e alle condizioni d'uso</a0> per ulteriori informazioni circa l'utilizzo equo di Adblock Plus."

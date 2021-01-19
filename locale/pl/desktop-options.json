@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Wprowadź prawidłowy adres URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Adres URL musi zaczynać się od $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Dodaj zestaw filtrów"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Ze względów bezpieczeństwa, możliwe jest dodanie wyłącznie list filtrów protokołu <strong>HTTPS</strong> oraz URL <strong>danych</strong>."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Wystąpił problem"
   },
   "options_dialog_language_other_empty": {
     "message": "Brak dostępnych języków."
@@ -114,10 +128,19 @@
     "message": "Wybierz język"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Tak, użyj tego zestawu filtrów"
+    "message": "Tak, dodaję tę listę filtrów"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Tytuł"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Czy chcesz użyć tego zestaw filtrów?"
+  },
+  "options_donate_button": {
+    "message": "Wesprzyj"
   },
   "options_email": {
     "message": "E-mail:"
@@ -150,16 +173,24 @@
     "message": "Nie powiodło się – niepoprawna suma kontrolna"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Nie powiodło się – błąd pobierania"
+    "message": "Błąd pobierania"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aktualizacja"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Nie powiodło się – nieprawidłowy zestaw filtrów"
+    "message": "Nieprawidłowa lista filtrów"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Nie powiodło się – nieprawidłowy adres"
+    "message": "Nieprawidłowy adres. Sprawdź adres URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Pobieranie się nie powiodło. Adres URL musi zaczynać się od $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "min temu"
@@ -180,7 +211,7 @@
     "message": "Aktualizuj teraz"
   },
   "options_filterList_website": {
-    "message": "Witryna internetowa"
+    "message": "Strona internetowa"
   },
   "options_filter_list_rule": {
     "message": "Reguły filtrowania"
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Ikony mediów społecznościowych znajdujące się w odwiedzanych witrynach internetowych umożliwiaj sieciom mediów społecznościowych na budowanie Twojego profilu w oparciu o Twoje nawyki przeglądania – nawet, jeśli ich nie klikasz. Ukrycie tych ikon może ochronić Twój profil."
   },
-  "options_rating_description": {
-    "message": "Poświęć chwilę i pomóż spopularyzować Adblock Plusa, wystawiając ocenę. Dziękujemy za wsparcie!"
-  },
-  "options_rating_title": {
-    "message": "Lubisz Adblock Plusa?"
+  "options_rating_button": {
+    "message": "Oceń nas"
   },
   "options_report_bug": {
     "message": "Widzisz błąd? <a>Wyślij do nas zgłoszenie</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Bądź w kontakcie"
+  },
+  "options_supportUs_description": {
+    "message": "Poświęć chwilę, aby ocenić ABP lub przekazać darowiznę na projekt. Dziękujemy za wsparcie!"
+  },
+  "options_supportUs_title": {
+    "message": "Lubisz Adblock Plus?"
   },
   "options_support_title": {
     "message": "Pomoc"

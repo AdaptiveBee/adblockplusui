@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Marquer le problème"
   },
+  "issueReporter_other_issues": {
+    "message": "Pour toute autre question, n'hésitez pas à nous contacter en nous écrivant à <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Signalement de problèmes"
   },
@@ -105,7 +108,7 @@
     "message": "Cliquez sur ce lien pour examiner les données contenues dans le rapport avant de l’envoyer"
   },
   "issueReporter_typeSelector_description": {
-    "message": "Sélectionnez un problème :"
+    "message": "S'il vous plaît sélectionnez un problème :"
   },
   "issueReporter_typeSelector_heading": {
     "message": "Quel type de problème rencontrez-vous ?"

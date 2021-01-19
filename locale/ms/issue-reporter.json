@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Komen(optional)"
   },
+  "issueReporter_config_label": {
+    "message": "Sertakan informasi mengenai konfigurasi pelayar saya, serta senarai sambungan yang saya gunakan."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Laporan anda telah disimpan. Anda boleh mengaksesnya di alamat berikut:"
   },
@@ -67,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Tandakan masalah"
+  },
+  "issueReporter_other_issues": {
+    "message": "Untuk masalah yang lain, hubungi kami melalui <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Pelapor isu"

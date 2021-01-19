@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduïu una URL vàlida"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "L'URL ha de començar amb $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Afegeix una llista de filtres"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Per raons de seguretat, només es poden afegir llistes de filtres <strong>HTTPS</strong> i URL de <strong>dades</strong>."
+  },
+  "options_dialog_invalid_title": {
+    "message": "S'ha produït un error"
   },
   "options_dialog_language_other_empty": {
     "message": "No hi ha idiomes disponibles."
@@ -114,7 +128,13 @@
     "message": "Seleccioneu un idioma"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sí, utilitza aquesta llista de filtres"
+    "message": "Sí, afegeix aquesta llista de filtres"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Títol"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Esteu segur que voleu afegir aquesta llista de filtres?"
@@ -156,10 +176,18 @@
     "message": "S'està actualitzant"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Error, no és una llista de filtres vàlida"
+    "message": "No és una llista de filtres vàlida"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Error, no és una adreça vàlida"
+    "message": "No és una adreça vàlida. Comproveu l’URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Ha fallat la baixada. L'URL ha de començar amb $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "fa uns minuts"
@@ -168,7 +196,7 @@
     "message": "Ara mateix"
   },
   "options_filterList_source": {
-    "message": "font"
+    "message": "Origen"
   },
   "options_filterList_title": {
     "message": "Llista de filtres"
@@ -177,10 +205,10 @@
     "message": "actualitza totes les llistes de filtres"
   },
   "options_filterList_updateNow": {
-    "message": "actualitza ara"
+    "message": "Actualitza ara"
   },
   "options_filterList_website": {
-    "message": "lloc web"
+    "message": "Lloc web"
   },
   "options_filter_list_rule": {
     "message": "Regla de filtre"
@@ -274,12 +302,6 @@
   },
   "options_protection_social_tooltip": {
     "message": "Les icones de les xarxes socials dels llocs web que visiteu permeten que les xarxes de xarxes socials construeixin un perfil segons els vostres hàbits de navegació, fins i tot quan no feu clic a ells. Ocultar aquestes icones pot protegir el vostre perfil."
-  },
-  "options_rating_description": {
-    "message": "Ajudeu-nos a difondre la paraula qualificant l'Adblock Plus. Gràcies pel vostre suport!"
-  },
-  "options_rating_title": {
-    "message": "Us agrada l'Adblock Plus?"
   },
   "options_report_bug": {
     "message": "Heu trobat un error? <a>Envieu-nos un informe d'error</a>"

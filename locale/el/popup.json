@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Αποκλεισμός στοιχείου σε αυτόν τον ιστότοπο"
+  },
   "easy_create_filter": {
     "message": "Φραγή στοιχείου"
   },
@@ -8,20 +11,56 @@
   "overlay_notification_closing_button_optout": {
     "message": "Διακοπή εμφάνισης ειδοποιήσεων"
   },
-  "stats_label_page": {
-    "message": "<strong>$number$</strong> σε αυτή την σελίδα",
+  "refresh_this_page": {
+    "message": "Ανανέωση αυτής της σελίδας"
+  },
+  "refresh_to_take_effect": {
+    "message": "Κάντε κλικ στο παρακάτω κουμπί για να πραγματοποιηθούν οι αλλαγές."
+  },
+  "sendReport": {
+    "message": "Αναφορά ενός προβλήματος σε αυτή την σελίδα"
+  },
+  "share_on_facebook": {
+    "message": "Κοινοποίηση στο Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Κοινοποίηση στο Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
     "placeholders": {
       "number": {
         "content": "$1"
       }
     }
   },
-  "stats_label_total": {
-    "message": "<strong>$number$</strong> συνολικά",
+  "share_on_weibo": {
+    "message": "Κοινοποίηση στο Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Εχώ αποκλείσει $number$ τις διαφημίσεις με το Adblock Plus. Δοκιμάστε το - είναι ΔΩΡΕΑΝ!",
     "placeholders": {
       "number": {
         "content": "$1"
       }
     }
+  },
+  "social_media_share": {
+    "message": "Κοινοποίηση των αριθμών σε φίλους"
+  },
+  "stats_label_page": {
+    "message": "σ' αυτή τη σελίδα"
+  },
+  "stats_label_total": {
+    "message": "συνολικά"
+  },
+  "status_domain": {
+    "message": "Αυτός ο ιστότοπος:"
+  },
+  "status_header": {
+    "message": "Αποκλεισμός προσθέτων"
+  },
+  "status_page": {
+    "message": "Αυτή η σελίδα:"
   }
 }

@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "Süzgeç(ler) eklensin mi?"
-  },
   "block_element": {
     "message": "Öğeyi engelle"
   },
-  "loading": {
+  "composer_block": {
+    "message": "Engelle"
+  },
+  "composer_cancel": {
+    "message": "İptal et"
+  },
+  "composer_elements": {
+    "message": "öğe seçildi"
+  },
+  "composer_loading": {
     "message": "Yükleniyor..."
+  },
+  "composer_preview": {
+    "message": "Önizleme"
+  },
+  "composer_undo_preview": {
+    "message": "Önizlemeden çık"
+  },
+  "composer_unselect": {
+    "message": "Seçimi kaldır"
   }
 }

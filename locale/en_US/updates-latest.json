@@ -1,0 +1,30 @@
+{
+  "notification_updates_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "No action is required—continue browsing the web without annoying ads! <a>See what's new</a>"
+  },
+  "notification_updates_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/a4651168848d564bfb9e59ecac1ed7432579d1b1/spec/abp/updates.md#notification-process",
+    "message": "Adblock Plus is up-to-date"
+  },
+  "updates_update_i1_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
+    "message": "Added a short description of the Block Element feature and improved wording for the Report button."
+  },
+  "updates_update_i1_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
+    "message": "ABP user interface is now a little more user-friendly"
+  },
+  "updates_update_i2_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
+    "message": "We've made the Block Element feature easier to use by adding short instructions as well as a preview of how the page will look without the intrusive element. Try it out!"
+  },
+  "updates_update_i2_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
+    "message": "Updated and improved Block Element feature"
+  },
+  "updates_update_i2_image": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/e7880944f972552fb33aeb0444bd821714712b5a/spec/abp/updates.md#current-updates",
+    "message": "Example of icon pop-up with redesigned \"Block element\" button."
+  }
+}

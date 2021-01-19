@@ -95,8 +95,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Inserisci un URL valido"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "L'URL deve iniziare con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Aggiungere un elenco di filtri"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Per motivi di sicurezza, è possibile aggiungere solo elenchi filtri <strong>HTTPS</strong> e URL di <strong>dati</strong>."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Si è verificato un errore"
   },
   "options_dialog_language_other_empty": {
     "message": "Non esistono lingue disponibili."
@@ -105,10 +119,16 @@
     "message": "Selezionare una lingua"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sì, utilizzare questo elenco di filtri"
+    "message": "Sì, aggiungi questo elenco filtri"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titolo"
   },
   "options_dialog_predefined_title": {
     "message": "Sei sicuro di voler raggiungere questo elenco di filtri?"
+  },
+  "options_donate_button": {
+    "message": "Fai una donazione"
   },
   "options_email": {
     "message": "Indirizzo e-mail:"
@@ -141,16 +161,24 @@
     "message": "Sincronizzazione non riuscita, checksum non corrispondente"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Sincronizzazione non riuscita, errore durante il download"
+    "message": "Errore di download"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Aggiornamento in corso"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Errore, non un elenco di filtri valido"
+    "message": "Elenco di filtri non valido"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Sincronizzazione non riuscita, indirizzo web non valido"
+    "message": "Indirizzo non valido. Verificare l'URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Impossibile eseguire il download. L'URL deve iniziare con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minuti fa"
@@ -171,7 +199,7 @@
     "message": "Aggiornare ora"
   },
   "options_filterList_website": {
-    "message": "Sito"
+    "message": "Sito web"
   },
   "options_filter_list_rule": {
     "message": "Regola del filtro"
@@ -250,11 +278,8 @@
   "options_protection_social_tooltip": {
     "message": "Le icone per i social media sui siti che visiti consentono alle reti di social media di creare un profilo su di te basato sulle tue abitudini di navigazione, anche quando non clicchi su di essi. Nascondere queste icone può proteggere il tuo profilo."
   },
-  "options_rating_description": {
-    "message": "Ti invitiamo a dedicare qualche minuto per aiutarci a diffondere le informazioni dando una valutazione ad Adblock Plus. Grazie per il tuo sostegno."
-  },
-  "options_rating_title": {
-    "message": "Ti piace Adblock Plus?"
+  "options_rating_button": {
+    "message": "Dacci un voto"
   },
   "options_report_bug": {
     "message": "Hai trovato un bug? <a>Inviaci un bug report</a>"
@@ -267,6 +292,12 @@
   },
   "options_social_title": {
     "message": "Mettiti in contatto"
+  },
+  "options_supportUs_description": {
+    "message": "Aiutaci valutando ABP o facendo una donazione al progetto. Grazie del sostegno!"
+  },
+  "options_supportUs_title": {
+    "message": "Ti piace Adblock Plus?"
   },
   "options_support_title": {
     "message": "Assistenza"

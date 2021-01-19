@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Contrassegna problema"
   },
+  "issueReporter_other_issues": {
+    "message": "Per qualsiasi altro problema, contattarci all'indirizzo <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Segnalazione problemi"
   },

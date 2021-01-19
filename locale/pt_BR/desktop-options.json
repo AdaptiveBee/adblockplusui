@@ -18,7 +18,7 @@
     "message": "Os Anúncios Aceitáveis são anúncios não invasivos. Estão no grupo do meio entre o bloqueio de anúncios e conteúdo online de apoio pois geram receitas para os proprietários do site."
   },
   "options_acceptableAds_dnt_notification": {
-    "message": "<strong>Nota:</strong> você tem <strong>Não rastrear  (DNT)</strong> desativado nas definições do seu navegador. Para esta funcionalidade funcionar corretamente, ative <strong>DNT</strong> nas preferências do navegador. <a>Saiba como ativar DNT</a>"
+    "message": "<strong>Nota:</strong> você tem <strong>Não rastrear (DNT)</strong> desativado nas definições do seu navegador. Para esta funcionalidade funcionar corretamente, ative <strong>DNT</strong> nas preferências do navegador. <a>Saiba como ativar DNT</a>"
   },
   "options_acceptableAds_header": {
     "message": "ANÚNCIOS ACEITÁVEIS"
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduza um URL válido"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL deve começar com $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Adicionar uma lista de filtros"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Por razões de segurança, somente listas de filtros de <strong>HTTPS</strong> e URLs de <strong>dados</strong> podem ser adicionadas."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ocorreu um erro"
   },
   "options_dialog_language_other_empty": {
     "message": "Não há línguas disponíveis."
@@ -114,10 +128,19 @@
     "message": "Selecionar um idioma"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sim, usar esta lista de filtros"
+    "message": "Sim, adicionar esta lista de filtros."
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Título"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Tem certeza de que pretende adicionar esta lista de filtros?"
+  },
+  "options_donate_button": {
+    "message": "Doe"
   },
   "options_email": {
     "message": "E-mail:"
@@ -150,16 +173,24 @@
     "message": "Falhou, checksum deu errado"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Falhou, falha no download"
+    "message": "Falha no download"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Atualizando"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Falha na lista de filtros não válida"
+    "message": "A lista de filtros não é válida"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Falhou, não é um endereço válido"
+    "message": "O endereço não é válido. Verifique o URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Falha no download. URL deve começar com $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "Há minutos"
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Os ícones das redes sociais nos sites que visita permitem que o sistema das redes sociais crie um perfil com base nos seus hábitos de navegação - mesmo quando não clica neles. Ocultar estes ícones pode proteger o seu perfil."
   },
-  "options_rating_description": {
-    "message": "Por favor, dedique um momento de seu tempo e ajude-nos a divulgar o Adblock Plus com sua avaliação. Obrigado por seu suporte!"
-  },
-  "options_rating_title": {
-    "message": "Está gostando do Adblock Plus?"
+  "options_rating_button": {
+    "message": "Avalie-nos"
   },
   "options_report_bug": {
     "message": "Encontrou um erro? <a>Envie um relatório de erros</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Entrar em contato"
+  },
+  "options_supportUs_description": {
+    "message": "Reserve um momento para avaliar o ABP ou doar para o projeto. Agradecemos a sua ajuda!"
+  },
+  "options_supportUs_title": {
+    "message": "Você está gostando do Adblock Plus?"
   },
   "options_support_title": {
     "message": "Assistência técnica"

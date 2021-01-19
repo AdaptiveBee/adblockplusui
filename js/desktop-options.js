@@ -22,7 +22,6 @@
 require("./io-filter-table");
 require("./io-list-box");
 require("./io-popout");
-require("./io-rating");
 require("./io-toggle");
 
 const api = require("./api");
@@ -31,6 +30,8 @@ const {
   closeAddFiltersByURL,
   setupAddFiltersByURL
 } = require("./add-filters-by-url");
+
+const ALLOWED_PROTOCOLS = /^(?:data|https):/;
 
 const {port} = api;
 const {stripTagsUnsafe} = ext.i18n;
@@ -59,13 +60,16 @@ const filterErrors = new Map([
 ]);
 const timestampUI = Symbol();
 const whitelistedDomainRegexp = /^@@\|\|([^/:]+)\^\$document$/;
+const whitelistedPageRegexp = /^@@\|([^?|]+(?:\?[^|]*)?)\|?\$document$/;
 // Period of time in milliseconds
 const minuteInMs = 60000;
 const hourInMs = 3600000;
 const fullDayInMs = 86400000;
 
-const promisedLocaleInfo = browser.runtime.sendMessage({type: "app.get",
-  what: "localeInfo"});
+const promisedLocaleInfo = browser.runtime.sendMessage({
+  type: "app.get",
+  what: "localeInfo"
+});
 const promisedDateFormat = promisedLocaleInfo.then((addonLocale) =>
 {
   return new Intl.DateTimeFormat(addonLocale.locale);
@@ -166,7 +170,7 @@ Collection.prototype.addItem = function(item)
     const tooltip = $("io-popout[type='tooltip']", listItem);
     if (tooltip)
     {
-      let tooltipId = tooltip.getAttribute("i18n-body");
+      let tooltipId = tooltip.dataset.templateI18nBody;
       tooltipId = tooltipId.replace("%value%", item.recommended);
       if (getMessage(tooltipId))
       {
@@ -290,11 +294,24 @@ Collection.prototype.updateItem = function(item)
       }
       else if (item.downloadStatus != "synchronize_ok")
       {
-        const error = filterErrors.get(item.downloadStatus);
-        if (error)
+        let errorId = null;
+        // Core doesn't tell us why the URL is invalid so we have to check
+        // ourselves whether the filter list is using a supported protocol
+        // https://gitlab.com/eyeo/adblockplus/adblockpluscore/blob/d3f6b1b7e3880eab6356b132493a4a947c87d33f/lib/downloader.js#L270
+        if (item.downloadStatus === "synchronize_invalid_url" &&
+            !ALLOWED_PROTOCOLS.test(item.url))
+        {
+          errorId = "options_filterList_lastDownload_invalidURLProtocol";
+        }
+        else
+        {
+          errorId = filterErrors.get(item.downloadStatus);
+        }
+
+        if (errorId)
         {
           message.classList.add("error");
-          message.textContent = getMessage(error);
+          message.textContent = getMessage(errorId);
         }
         else
           message.textContent = item.downloadStatus;
@@ -437,8 +454,10 @@ function addSubscription(subscription)
     case "social":
       collection = collections.protection;
       break;
-    case undefined:
-      if (!isAcceptableAds(url) && disabled == false)
+    default:
+      if (typeof recommended === "undefined" &&
+          !isAcceptableAds(url) &&
+          disabled == false)
         collection = collections.more;
       break;
   }
@@ -483,10 +502,30 @@ function updateSubscription(subscription)
 
 function updateFilter(filter)
 {
-  const match = filter.text.match(whitelistedDomainRegexp);
-  if (match && !filtersMap[filter.text])
+  let whitelistTitle = null;
+
+  const domainMatch = filter.text.match(whitelistedDomainRegexp);
+  if (domainMatch && !filtersMap[filter.text])
   {
-    filter.title = match[1];
+    whitelistTitle = domainMatch[1];
+  }
+  else
+  {
+    const pageMatch = filter.text.match(whitelistedPageRegexp);
+    if (pageMatch && !filtersMap[filter.text])
+    {
+      const url = pageMatch[1];
+      whitelistTitle = url.replace(/^[\w-]+:\/+(?:www\.)?/, "");
+      if (/\?$/.test(whitelistTitle))
+      {
+        whitelistTitle += "…";
+      }
+    }
+  }
+
+  if (whitelistTitle)
+  {
+    filter.title = whitelistTitle;
     collections.whitelist.addItem(filter);
     if (isCustomFiltersLoaded)
     {
@@ -535,12 +574,21 @@ function getItemTitle(item)
 
 function getLanguageTitle(item)
 {
-  const langs = item.languages.slice(0);
-  const firstLang = langs.shift();
-  const description = langs.reduce((acc, lang) =>
-  {
-    return getMessage("options_language_join", [acc, languages[lang]]);
-  }, languages[firstLang]);
+  const description = item.languages
+    .slice()
+    .map((langCode) => languages[langCode])
+    // Remove duplicate language names
+    .filter((langName, idx, arr) => arr.indexOf(langName) === idx)
+    .reduce(
+      (acc, langName, idx) =>
+      {
+        if (idx === 0)
+          return langName;
+
+        return getMessage("options_language_join", [acc, langName]);
+      },
+      ""
+    );
 
   return /\+EasyList$/.test(item.originalTitle) ?
           `${description} + ${getMessage("options_english")}` :
@@ -550,11 +598,11 @@ function getLanguageTitle(item)
 function loadRecommendations()
 {
   return Promise.all([
-    fetch("data/languages.json").then((resp) => resp.json()),
+    fetch("./data/locales.json").then((resp) => resp.json()),
     api.app.get("recommendations")
-  ]).then(([languagesData, recommendations]) =>
+  ]).then(([localeData, recommendations]) =>
   {
-    languages = languagesData;
+    languages = localeData.nativeNames;
 
     const subscriptions = [];
     for (const recommendation of recommendations)
@@ -629,8 +677,8 @@ function execAction(action, element)
       return true;
     case "add-predefined-subscription": {
       const dialog = $("#dialog-content-predefined");
-      const title = $("h3", dialog).textContent;
-      const url = $(".url", dialog).textContent;
+      const title = $(".title > span", dialog).textContent;
+      const url = $(".url > a", dialog).textContent;
       addEnableSubscription(url, title);
       closeDialog();
       return true;
@@ -988,8 +1036,10 @@ function onDOMLoaded()
     what: "addonVersion"
   }).then(addonVersion =>
   {
-    $("#abp-version").textContent = getMessage("options_dialog_about_version",
-      [addonVersion]);
+    $("#abp-version").textContent = getMessage(
+      "options_dialog_about_version",
+      [addonVersion]
+    );
   });
 
   // Initialize interactive UI elements
@@ -1018,11 +1068,19 @@ function onDOMLoaded()
   {
     $("#privacy-policy").href = url;
   });
-  setElementText($("#tracking-warning-1"), "options_tracking_warning_1",
-    [getMessage("common_feature_privacy_title"),
-     getMessage("options_acceptableAds_ads_label")]);
-  setElementText($("#tracking-warning-3"), "options_tracking_warning_3",
-    [getMessage("options_acceptableAds_privacy_label")]);
+  setElementText(
+    $("#tracking-warning-1"),
+    "options_tracking_warning_1",
+    [
+      getMessage("common_feature_privacy_title"),
+      getMessage("options_acceptableAds_ads_label")
+    ]
+  );
+  setElementText(
+    $("#tracking-warning-3"),
+    "options_tracking_warning_3",
+    [getMessage("options_acceptableAds_privacy_label")]
+  );
 
   getDoclink("adblock_plus_{browser}_dnt").then(url =>
   {
@@ -1073,24 +1131,20 @@ function onDOMLoaded()
     setElementLinks("visit-forum", url);
   });
 
-  api.app.get("application").then((application) =>
+  api.app.getInfo().then(({application, store}) =>
   {
-    // Chromium has its own application ID but also installs extensions from
-    // the Chrome Web Store so we're treating it the same way as Chrome
-    if (application === "chromium")
-    {
-      application = "chrome";
-    }
-
     // We need to restrict this feature to certain browsers for which we
     // have a link to where users can rate us
-    if (!["chrome", "opera", "firefox"].includes(application))
+    if (!["chrome", "chromium", "opera", "firefox"].includes(application))
     {
-      $("#rating").setAttribute("aria-hidden", true);
+      $("#support-us").setAttribute("aria-hidden", true);
       return;
     }
 
-    $("#rating io-rating").application = application;
+    api.doclinks.get(`${store}_review`).then((url) =>
+    {
+      $("#support-us a[data-i18n='options_rating_button']").href = url;
+    });
   });
 
   $("#dialog").addEventListener("keydown", function(e)
@@ -1126,7 +1180,8 @@ function openDialog(name)
 {
   const dialog = $("#dialog");
   dialog.setAttribute("aria-hidden", false);
-  dialog.setAttribute("aria-labelledby", "dialog-title-" + name);
+  dialog.setAttribute("aria-labelledby", `dialog-title-${name}`);
+  dialog.setAttribute("aria-describedby", `dialog-description-${name}`);
   document.body.setAttribute("data-dialog", name);
 
   let defaultFocus = $(`#dialog-content-${name} .default-focus`);
@@ -1311,9 +1366,14 @@ function populateLists()
 function addWhitelistedDomain()
 {
   const domain = $("#whitelisting-textbox");
+  const value = domain.value.trim();
+
+  if (!value)
+    return;
+
   for (const whitelistItem of collections.whitelist.items)
   {
-    if (whitelistItem.title == domain.value)
+    if (whitelistItem.title == value)
     {
       whitelistItem[timestampUI] = Date.now();
       collections.whitelist.updateItem(whitelistItem);
@@ -1321,18 +1381,21 @@ function addWhitelistedDomain()
       break;
     }
   }
-  const value = domain.value.trim();
-  if (value)
+
+  try
   {
-    const host = /^https?:\/\//i.test(value) ? new URL(value).host : value;
+    const {host} = new URL(/^https?:/.test(value) ? value : `http://${value}`);
     sendMessageHandleErrors({
       type: "filters.add",
       text: "@@||" + host.toLowerCase() + "^$document"
     });
+    domain.value = "";
+    $("#whitelisting-add-button").disabled = true;
   }
-
-  domain.value = "";
-  $("#whitelisting-add-button").disabled = true;
+  catch (error)
+  {
+    dispatchError(error);
+  }
 }
 
 function addEnableSubscription(url, title, homepage)
@@ -1369,7 +1432,8 @@ function onFilterMessage(action, filter)
       break;
     case "removed":
       const knownFilter = filtersMap[filter.text];
-      if (whitelistedDomainRegexp.test(knownFilter.text))
+      if (whitelistedDomainRegexp.test(knownFilter.text) ||
+          whitelistedPageRegexp.test(knownFilter.text))
         collections.whitelist.removeItem(knownFilter);
       else
         removeCustomFilter(filter.text);
@@ -1512,7 +1576,6 @@ port.onMessage.addListener((message) =>
       {
         case "addSubscription":
           const subscription = message.args[0];
-          const dialog = $("#dialog-content-predefined");
 
           let {title, url} = subscription;
           if (!title || title == url)
@@ -1520,9 +1583,20 @@ port.onMessage.addListener((message) =>
             title = "";
           }
 
-          $("h3", dialog).textContent = title;
-          $(".url", dialog).textContent = url;
-          openDialog("predefined");
+          if (ALLOWED_PROTOCOLS.test(url))
+          {
+            const dialog = $("#dialog-content-predefined");
+            $(".title > span", dialog).textContent = title;
+            $(".title", dialog).hidden = !title;
+            const link = $(".url > a", dialog);
+            link.href = url;
+            link.textContent = url;
+            openDialog("predefined");
+          }
+          else
+          {
+            openDialog("invalid");
+          }
           break;
         case "focusSection":
           let section = message.args[0];

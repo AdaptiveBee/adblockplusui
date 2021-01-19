@@ -1,4 +1,10 @@
 {
+  "options_aa_opt_out_survey_no": {
+    "message": "Не, дзякуй"
+  },
+  "options_aa_opt_out_survey_ok": {
+    "message": "Перайсці да апытання"
+  },
   "options_acceptableAds_ads_description_1": {
     "message": "Дапушчальна рэклама не дакучае і не мяшае прагляду зместу старонкі. <a>Больш падрабязна пра крытэрыі дапушчальнай рэкламы</a>"
   },
@@ -20,6 +26,9 @@
   "options_advanced_description": {
     "message": "Наладзьце Adblock Plus, дадавайце або выдаляйце спісы фільтраў, стварайце і карыстайцеся ўласнымі спісамі фільтраў"
   },
+  "options_builtin_filterList_add": {
+    "message": "Дадаць убудаваны спіс фільтраў"
+  },
   "options_close": {
     "message": "закрыць"
   },
@@ -30,10 +39,10 @@
     "message": "Скасаваць"
   },
   "options_customFilters_description": {
-    "message": "Пішыце ўласныя фільтры, каб дадаткова акрэсліць змест, які Adblock Plus будзе паказваць або хаваць."
+    "message": "Пішыце ўласныя фільтры, каб дадаткова акрэсліць змест, які Adblock Plus будзе паказваць або хаваць. <a0>Даведайцеся як пісаць фільтры (толькі на англійскай)</a0>"
   },
   "options_customFilters_title": {
-    "message": "Стварыце і рэдагуйце ўласны спіс фільтраў"
+    "message": "Уласныя фільтры"
   },
   "options_customFilters_widget_title": {
     "message": "Уласны спіс фільтраў"
@@ -92,8 +101,19 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Увядзіце сапраўдны URL-адрас"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL-адрас павінен пачынацца з $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Дадаць спіс фільтраў"
+  },
+  "options_dialog_invalid_title": {
+    "message": "Адбылася памылка"
   },
   "options_dialog_language_other_empty": {
     "message": "Няма даступных моў."
@@ -103,6 +123,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Так, ужыць гэты спіс фільтраў"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Назва"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Сапраўды дадаць гэты спіс фільтраў?"
@@ -114,7 +140,7 @@
     "message": "Англійская"
   },
   "options_filterList_add": {
-    "message": "Дадаць новы спіс фільтраў"
+    "message": "Дадаць спіс фільтраў праз URL"
   },
   "options_filterList_column_name": {
     "message": "Спіс фільтраў"
@@ -148,6 +174,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Памылка: няправільны адрас"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Памылка спампоўвання. URL-адрас павінен пачынацца з $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "некалькі хвілін таму"
@@ -190,6 +224,12 @@
   "options_general_description": {
     "message": "Акрэсліце, што будзе паказваць і хаваць Adblock Plus на сайтах"
   },
+  "options_generic_error": {
+    "message": "Вой! Нешта пайшло не так. Паспрабуйце яшчэ раз."
+  },
+  "options_help_center": {
+    "message": "Шукаеце адказы на пытанні? <a0>Наведайце наш даведачны цэнтр (толькі на англійскай)</a0>"
+  },
   "options_help_description": {
     "message": "Знайдзіце даведачныя матэрыялы або звяжыцеся з намі"
   },
@@ -205,8 +245,24 @@
   "options_language_empty": {
     "message": "Не дададзена фільтраў для пэўнай мовы."
   },
+  "options_language_filter_list": {
+    "message": "Рэгіянальныя спісы фільтраў"
+  },
   "options_language_header": {
     "message": "Мова"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>Парада.</strong> Выбірайце толькі патрэбныя вам мовы. Вялікая колькасць можа запаволіць блакіроўшчык рэкламы, а значыць і хуткасць браўзера."
@@ -307,6 +363,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Тут будуць паказвацца сайты якім вы давяраеце і дазваляеце ім паказваць рэкламу."
+  },
+  "options_whitelist_notification": {
+    "message": "Сайт дададзены ў спіс дазволеных."
   },
   "options_whitelist_placeholder_example": {
     "message": "Узор: $domain$",

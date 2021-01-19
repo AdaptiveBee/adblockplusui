@@ -42,7 +42,7 @@
     "message": "Chúng tôi khuyến khích bạn nhập địa chỉ email hợp lệ để chúng tôi tiện liên lạc nếu chúng tôi cần gì từ thông báo của bạn. Đồng thời, nó cũng giúp chúng tôi có thể ghi nhận công lao đóng góp của bạn ."
   },
   "issueReporter_email_label": {
-    "message": "Địa chỉmail:"
+    "message": "Email:"
   },
   "issueReporter_errorMessage": {
     "message": "Một nỗ lực gửi báo cáo bị thất bại với mã lỗi \"?1?\". Vui lòng chắc chắn rằng bạn đã được kết nối Internet rồi thử lại. Nếu vấn đề vẫn còn, vui lòng yêu cầu trợ giúp trên [link]diễn đàn Adblock Plus[/link]."
@@ -70,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Đánh dấu vấn đề"
+  },
+  "issueReporter_other_issues": {
+    "message": "Đối với tất cả các vấn đề khác, xin vui lòng liên hệ với chúng tôi qua <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Trình báo cáo lỗi"

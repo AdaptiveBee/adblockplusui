@@ -21,7 +21,6 @@
 @import "io-list-box.scss";
 @import "io-popout.scss";
 @import "io-popout-fixes.scss";
-@import "io-rating.scss";
 @import "io-toggle.scss";
 
 html
@@ -57,7 +56,7 @@ h2
 
 a
 {
-  color: #077CA6;
+  color: #0797E1;
 }
 
 a:hover
@@ -114,6 +113,7 @@ button,
 {
   display: block;
   padding: 0.6rem 0.8rem;
+  border-radius: var(--border-radius);
   background-color: transparent;
   font-size: 1rem;
   font-weight: 700;
@@ -128,13 +128,21 @@ button[aria-disabled="true"]
   cursor: default;
 }
 
+button.primary:not(.icon),
+.button.primary:not(.icon),
+button.secondary:not(.icon),
+.button.secondary:not(.icon)
+{
+  padding: 0.6rem 2rem;
+}
+
 /* Ignore .icon to avoid overriding "specific" (primary, secondary) styles */
 button.primary:not(.icon),
 .button.primary:not(.icon)
 {
   border: 0px;
   color: #FFF;
-  background-color: #077CA6;
+  background-color: #0797E1;
 }
 
 button.primary:not([disabled]):not(.icon):hover,
@@ -151,20 +159,20 @@ button.primary[disabled]:not(.icon)
 button.secondary:not(.icon),
 .button.secondary:not(.icon)
 {
-  border: 2px solid #077CA6;
-  color: #077CA6;
+  border: 2px solid #0797E1;
+  color: #0797E1;
 }
 
 button.secondary:not(.icon):hover,
 .button.secondary:not(.icon):hover
 {
-  box-shadow: inset 0 0 0 1px #077CA6;
+  box-shadow: inset 0 0 0 1px #0797E1;
 }
 
 button.link,
 button.list
 {
-  color: #077CA6;
+  color: #0797E1;
 }
 
 button.link
@@ -195,8 +203,8 @@ button.list
 
 button.list:hover
 {
-  border-color: #077CA6;
-  box-shadow: inset 0 0 0 3px #077CA6;
+  border-color: #0797E1;
+  box-shadow: inset 0 0 0 3px #0797E1;
 }
 
 button.add.secondary
@@ -207,7 +215,7 @@ button.add.secondary
 
 button.add.secondary:hover
 {
-  border-color: #077CA6;
+  border-color: #0797E1;
 }
 
 button.add::before
@@ -233,6 +241,7 @@ button.add::before
   top: -260px;
   width: 100%;
   height: 260px;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
   background: #fff;
   box-shadow: 0 -4px 20px 0 rgba(0,0,0,0.11);
 }
@@ -293,7 +302,7 @@ html[dir="rtl"] .side-controls > *
 
 .side-controls.wrap > *
 {
-  margin: 0.6rem 0rem;
+  margin: 0.6rem 0;
 }
 
 html:not([dir="rtl"]) .side-controls.wrap > *
@@ -496,11 +505,6 @@ button[role="checkbox"][disabled].icon.toggle::before
   background-image: url("icons/facebook.svg");
 }
 
-.icon.weibo::before
-{
-  background-image: url("icons/weibo.svg");
-}
-
 /*
   Forms
  */
@@ -528,7 +532,7 @@ button[role="checkbox"][disabled].icon.toggle::before
   top: calc(var(--padding-primary) * -2);
   right: 0;
   z-index: 10;
-  color: #C11D27;
+  color: var(--color-error);
 }
 
 [data-validation] .side-controls
@@ -549,7 +553,7 @@ html[dir="rtl"] [data-validation] .main-input input ~ .error-msg
 
 [data-validation] .main-input input:focus:invalid
 {
-  border-color: #C11D27;
+  border-color: var(--color-error);
 }
 
 [data-validation] .main-input input:focus:invalid ~ .attention::before,
@@ -683,35 +687,54 @@ html[dir="rtl"] #sidebar header h1
   list-style: none;
 }
 
-[role="tablist"] li a
+li a[role="tab"]
 {
   display: flex;
-  margin-top: -1px;
   margin-right: -1px;
   margin-left: -1px;
   padding: 1rem 0.8rem;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #CDCDCD transparent;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
+li a[role="tab"]:hover
+{
+  background-color: #EAEAEA;
+}
+
 li a[role="tab"][aria-selected]
 {
+  border-color: #CDCDCD;
   background-color: #FFF;
   font-weight: 700;
 }
 
-html:not([dir="rtl"]) li a[role="tab"][aria-selected]
+html[dir="rtl"] li a[role="tab"]
+{
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+html:not([dir="rtl"]) li a[role="tab"]:hover
+{
+  border-right-color: #CDCDCD;
+}
+
+html[dir="rtl"] li a[role="tab"]:hover
 {
   border-left-color: #CDCDCD;
 }
 
+html:not([dir="rtl"]) li a[role="tab"][aria-selected]
+{
+  border-right-color: transparent;
+}
+
 html[dir="rtl"] li a[role="tab"][aria-selected]
 {
-  border-right-color: #CDCDCD;
+  border-left-color: transparent;
 }
 
 #sidebar footer
@@ -726,14 +749,14 @@ html[dir="rtl"] li a[role="tab"][aria-selected]
   justify-content: center;
 }
 
-#rating
+#support-us
 {
   position: fixed;
   bottom: 40px;
   margin: 0 40px;
 }
 
-#rating .h2-icon
+#support-us .h2-icon
 {
   /* Align icon with edges of text based on text's line height and font size */
   width: 2em;
@@ -741,33 +764,51 @@ html[dir="rtl"] li a[role="tab"][aria-selected]
   margin-top: 0.3em;
 }
 
-html:not([dir="rtl"]) #rating .h2-icon
+html:not([dir="rtl"]) #support-us .h2-icon
 {
   float: left;
   margin-right: 0.5em;
 }
 
-html[dir="rtl"] #rating .h2-icon
+html[dir="rtl"] #support-us .h2-icon
 {
   float: right;
   margin-left: 0.5em;
 }
 
-#rating h2
+#support-us h2
 {
   margin: 0;
   font-size: 1rem;
 }
 
-#rating p
+#support-us p
 {
   text-align: center;
 }
 
-#rating io-rating
+#support-us a.button
 {
-  width: 70%;
-  margin: auto;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 2px;
+  border: 1px solid var(--border-color-ternary);
+  font-size: var(--font-size-primary);
+  color: #0797e1;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 0.2s ease-out;
+}
+
+#support-us a.button:last-of-type
+{
+  margin-bottom: 0;
+}
+
+#support-us a.button:hover,
+#support-us a.button:focus
+{
+  background-color: #e9f6fc;
 }
 
 /* This is a stopgap solution of footer overlapping tabs on low resolutions */
@@ -802,6 +843,7 @@ main
   width: 46.3rem;
   padding: 0px 0rem 1.4rem;
   border: 1px solid #CDCDCD;
+  border-radius: var(--border-radius);
   background-color: #FFF;
 }
 
@@ -822,7 +864,8 @@ main p
 [role="tabpanel"] > section,
 [role="tabpanel"] > .section
 {
-  padding: 1.4rem 2rem;
+  margin: 0 2rem;
+  padding: 1.4rem 0;
   border-top: 1px solid #CDCDCD;
 }
 
@@ -929,13 +972,16 @@ html[dir="rtl"] #acceptable-ads ul
 #acceptable-ads ul button
 {
   position: absolute;
+}
+
+html[dir="ltr"] button
+{
   left: 0rem;
 }
 
 html[dir="rtl"] button
 {
   right: 0rem;
-  left: auto;
 }
 
 #acceptable-ads label
@@ -950,13 +996,24 @@ html[dir="rtl"] button
   --border-color: #099CD0;
   position: absolute;
   z-index: 1;
-  left: -130px;
   width: 260px;
   margin-top: 40px;
   padding: 16px;
+  box-sizing: border-box;
   border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   background-color: var(--background-color);
   text-align: center;
+}
+
+html[dir="ltr"] #acceptable-ads #acceptable-ads-why-not
+{
+  left: -117px;
+}
+
+html[dir="rtl"] #acceptable-ads #acceptable-ads-why-not
+{
+  right: -117px;
 }
 
 #acceptable-ads #acceptable-ads-why-not::before
@@ -964,10 +1021,9 @@ html[dir="rtl"] button
   display: block;
   position: absolute;
   top: -6px;
-  left: 50%;
+  left: calc(50% - 5px);
   width: 10px;
   height: 10px;
-  margin-left: -9px;
   border: 1px solid var(--border-color);
   border-right: none;
   border-bottom: none;
@@ -987,7 +1043,7 @@ html[dir="rtl"] button
   position: initial;
   margin: auto;
   border: 0;
-  color: #077CA6;
+  color: #0797E1;
 }
 
 html:not([dir="rtl"]) #acceptable-ads label
@@ -1003,7 +1059,7 @@ html[dir="rtl"] #acceptable-ads label
 #dnt
 {
   padding: 0.8rem;
-  border: 1px solid #077CA6;
+  border: 1px solid #0797E1;
 }
 
 /*
@@ -1047,6 +1103,7 @@ ul.list
 .table li:first-of-type
 {
   border-top: 1px solid #CDCDCD;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .table.list li
@@ -1067,11 +1124,26 @@ ul.list
 
 .table.list li > span
 {
+  overflow: hidden;
   margin: 0rem;
   flex: 1;
+  text-overflow: ellipsis;
 }
 
-.table.list li.empty-placeholder
+#content-whitelist .table.list li > span
+{
+  white-space: nowrap;
+}
+
+.table.list li[aria-label^="https://"] > span,
+.table.list li[aria-label^="data:"] > span
+{
+  white-space: initial;
+  word-break: break-all;
+}
+
+.table.list li.empty-placeholder,
+#all-filter-lists-table .empty-placeholder
 {
   padding: 1rem 1.4rem;
 }
@@ -1134,6 +1206,12 @@ ul.list
 .table .col5:nth-of-type(2)
 {
   flex: 8;
+}
+
+.table [aria-label^="https://"] .col5:nth-of-type(2),
+.table [aria-label^="data:"] .col5:nth-of-type(2)
+{
+  word-break: break-all;
 }
 
 .th .col5:nth-of-type(3),
@@ -1284,13 +1362,14 @@ html[dir="rtl"] .tooltip
 #content-whitelist form
 {
   display: flex;
+  margin-bottom: 1.4rem;
 }
 
 #content-whitelist form input
 {
-  height: 100%;
   padding: 0.5rem 1rem;
-  border: 2px solid #077CA6;
+  border: 2px solid #0797E1;
+  border-radius: var(--border-radius);
   font-size: 1rem;
   flex: 1;
 }
@@ -1399,12 +1478,6 @@ html[dir="rtl"] #all-filter-lists-table li.show-message .message.error::before
   Help tab content
 */
 
-html:not([lang^="zh"]) #social-chinese,
-html[lang^="zh"] #social-general
-{
-  display: none;
-}
-
 #social ul
 {
   padding: 0px;
@@ -1457,34 +1530,46 @@ body[data-dialog] #dialog-background
 
 #dialog
 {
+  overflow: hidden;
   position: fixed;
   z-index: var(--z-dialog);
   top: 100px;
-  right: 0px;
-  left: 0px;
-  width: 50vw;
+  right: 0;
+  left: 0;
+  width: 700px;
   margin: auto;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   background-color: #FFF;
+  box-shadow: 0 -4px 20px 0 rgba(255, 255, 255, 0.11);
 }
 
 #dialog header
 {
   display: flex;
-  padding: 0.7rem 1.5rem;
-  background-color: #077CA6;
+  padding: 1.5em;
+  background-color: #0797E1;
 }
 
-#dialog header h3
+#dialog-title
 {
-  margin: 0rem;
-  font-size: 1rem;
-  font-weight: 700;
+  color: #FFF;
+  flex: 1;
+}
+
+#dialog-title h3
+{
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#dialog button
+{
+  display: inline-block;
 }
 
 .close
 {
-  margin: 0rem;
+  margin: 0;
   cursor: pointer;
 }
 
@@ -1492,11 +1577,59 @@ body[data-dialog] #dialog-background
 {
   overflow: auto;
   max-height: 60vh;
+  padding: 2rem 1rem;
 }
 
-.dialog-content
+#dialog-body button
 {
-  margin: 1rem 1.8rem;
+  margin-top: 2rem;
+}
+
+#dialog-body h3
+{
+  margin: 0 0 0.5em;
+  line-height: 0.9em;
+  font-size: 0.9em;
+}
+
+#dialog-body h3::before
+{
+  position: absolute;
+  width: 18px;
+  height: 11px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+html[dir="ltr"] #dialog-body h3::before
+{
+  margin-left: -26px;
+}
+
+html[dir="rtl"] #dialog-body h3::before
+{
+  margin-right: -26px;
+}
+
+#dialog-body .field.title h3::before
+{
+  background-image: url(icons/filter-list-title.svg);
+}
+
+#dialog-body .field.url h3::before
+{
+  background-image: url(icons/filter-list-url.svg);
+}
+
+html[dir="ltr"] #dialog-body button + button
+{
+  margin-left: 1rem;
+}
+
+html[dir="rtl"] #dialog-body button + button
+{
+  margin-right: 1rem;
 }
 
 #dialog-content-language-add
@@ -1505,14 +1638,10 @@ body[data-dialog] #dialog-background
 }
 
 #dialog-content-about,
+#dialog-content-invalid,
 #filters-box button[role="combobox"]
 {
   text-align: center;
-}
-
-#dialog-content-about button
-{
-  margin: 1.5rem auto 1.8rem;
 }
 
 #dialog-content-about p
@@ -1525,6 +1654,51 @@ body[data-dialog] #dialog-background
   margin-top: 2.45rem;
 }
 
+#dialog-content-invalid
+{
+  color: var(--color-error);
+}
+
+#dialog-content-invalid .error
+{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1em;
+  border-radius: 50%;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 50px;
+  background-color: var(--background-color-error);
+}
+
+#dialog-content-invalid strong
+{
+  padding: 2px 5px;
+  border-radius: var(--border-radius);
+  font-style: italic;
+  background-color: var(--background-color-error);
+}
+
+#dialog .field
+{
+  margin-bottom: 1.5em;
+}
+
+html[dir="ltr"] #dialog .field
+{
+  margin-left: 28px;
+}
+
+html[dir="rtl"] #dialog .field
+{
+  margin-right: 28px;
+}
+
+#dialog .field:last-of-type
+{
+  margin-bottom: 0;
+}
+
 #dialog .table
 {
   width: 100%;
@@ -1535,28 +1709,38 @@ body[data-dialog] #dialog-background
   margin-top: 24px;
 }
 
-#dialog-title
+#dialog .url > a
 {
-  color: #FFF;
-  font-size: 16px;
-  flex: 1;
-}
-
-#dialog-body .dialog-content-block
-{
-  padding: 12px 0px;
-}
-
-#dialog .url
-{
-  margin-top: 10px;
-  margin-bottom: 20px;
   word-wrap: break-word;
+  text-decoration: none;
 }
 
-#dialog-content-predefined h3:empty
+#dialog .url > a:hover
 {
-  display: none;
+  text-decoration: underline;
+}
+
+#dialog .url > a::after
+{
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  vertical-align: middle;
+  background-image: url(icons/open-link.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+html[dir="ltr"] #dialog .url > a::after
+{
+  margin-left: 0.3em;
+}
+
+html[dir="rtl"] #dialog .url > a::after
+{
+  margin-right: 0.3em;
+  transform: scaleX(-1);
 }
 
 /* stylelint-disable indentation */
@@ -1572,6 +1756,8 @@ body:not([data-dialog="language-add"]) #dialog-body button.add,
 body:not([data-dialog="language-change"]) #dialog-body button.change,
 body:not([data-dialog="predefined"]) #dialog-title-predefined,
 body:not([data-dialog="predefined"]) #dialog-content-predefined,
+body:not([data-dialog="invalid"]) #dialog-title-invalid,
+body:not([data-dialog="invalid"]) #dialog-content-invalid,
 body:not([data-dialog]) #dialog
 {
   display: none;
@@ -1602,7 +1788,7 @@ body:not([data-dialog]) #dialog
 
 #notification.info
 {
-  color: #077CA6;
+  color: #0797E1;
   background-color: rgba(225, 242, 250, 0.8);
 }
 

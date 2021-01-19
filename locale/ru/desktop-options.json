@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Введите действительную URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL-адрес должен начинаться с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Добавить список фильтров"
+  },
+  "options_dialog_invalid_message": {
+    "message": "В целях безопасности могут быть добавлены лишь списки фильтров <strong>HTTPS</strong> и URL <strong>данных</strong>."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Произошла ошибка"
   },
   "options_dialog_language_other_empty": {
     "message": "Нет доступных языков."
@@ -114,10 +128,19 @@
     "message": "Выбрать язык"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Да, использовать этот список фильтров"
+    "message": "Да, добавить этот список фильтров"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Заголовок"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Вы уверены, что хотите добавить этот список фильтров?"
+  },
+  "options_donate_button": {
+    "message": "Пожертвовать"
   },
   "options_email": {
     "message": "Электронная почта:"
@@ -150,16 +173,24 @@
     "message": "Ошибка: проверочная сумма не совпадает"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Ошибка: невозможно загрузить"
+    "message": "Ошибка загрузки"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Выполняется обновление"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Ошибка: неверный формат списка фильтров"
+    "message": "Недействительный список фильтров"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Ошибка: неверный адрес"
+    "message": "Неверный адрес. Проверьте URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Ошибка загрузки. URL-адрес должен начинаться с $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "минут(-ы) назад"
@@ -202,6 +233,9 @@
   "options_general_description": {
     "message": "Определите, что Adblock Plus показывает и скрывает на сайтах"
   },
+  "options_generic_error": {
+    "message": "Ой! Что-то пошло не так. Пожалуйста, попробуйте еще раз."
+  },
   "options_help_center": {
     "message": "Ищите ответы на свои вопросы? <a0>Посетите наш справочный центр (только на английском языке)</a0>"
   },
@@ -225,6 +259,19 @@
   },
   "options_language_header": {
     "message": "Язык"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>СОВЕТ:</strong> Выберите только нужные языки. При выборе чрезмерного количества языков блокиратор рекламы станет работать медленнее и, следовательно, браузер тоже."
@@ -259,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Значки социальных сетей на посещаемых сайтах позволяют социальным сетям формировать ваш профиль на основании ваших привычек просмотра ресурсов сети – даже если вы их не нажимаете. Скрытие этих значков поможет защитить ваш профиль."
   },
-  "options_rating_description": {
-    "message": "Просим уделить пару минут, чтобы оценить работу Adblock Plus и рассказать другим о его пользе. Благодарим Вас за поддержку!"
-  },
-  "options_rating_title": {
-    "message": "Нравится Adblock Plus?"
+  "options_rating_button": {
+    "message": "Оцените нас"
   },
   "options_report_bug": {
     "message": "Нашли ошибку? <a>Отправить нам отчет об ошибках</a>"
@@ -276,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Связаться"
+  },
+  "options_supportUs_description": {
+    "message": "Уделите немного времени, чтобы оценить ABP или сделать пожертвование на проект. Спасибо за вашу поддержку!"
+  },
+  "options_supportUs_title": {
+    "message": "Нравится Adblock Plus?"
   },
   "options_support_title": {
     "message": "Поддержка"

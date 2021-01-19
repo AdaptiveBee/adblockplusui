@@ -71,11 +71,14 @@
   "issueReporter_markIssueButton_label": {
     "message": "Sorunu işaretle"
   },
+  "issueReporter_other_issues": {
+    "message": "Diğer tüm sorunlar için, bizimle şuradan iletişime geçin: <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Sorun bildirici"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Gizlilik politikası"
+    "message": "Gizlilik Politikası"
   },
   "issueReporter_processing_screenshot": {
     "message": "işleniyor"

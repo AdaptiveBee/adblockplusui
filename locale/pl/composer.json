@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "Dodać filtry?"
-  },
   "block_element": {
     "message": "Zablokuj element"
   },
-  "loading": {
-    "message": "Wczytywanie…"
+  "composer_block": {
+    "message": "Blokuj"
+  },
+  "composer_cancel": {
+    "message": "Anuluj"
+  },
+  "composer_elements": {
+    "message": "wybrany element(-y)"
+  },
+  "composer_loading": {
+    "message": "Ładowanie..."
+  },
+  "composer_preview": {
+    "message": "Podgląd"
+  },
+  "composer_undo_preview": {
+    "message": "Zamknij podgląd"
+  },
+  "composer_unselect": {
+    "message": "Odznacz"
   }
 }

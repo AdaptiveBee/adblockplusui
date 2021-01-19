@@ -20,8 +20,8 @@
 const {wire, utils} = require("./io-element");
 const {relativeCoordinates} = require("./dom");
 
-// use native rIC where available, fallback to setTimeout otherwise
-const requestIdleCallback = window.requestIdleCallback || setTimeout;
+// use native requestIdleCallback where available, fallback to setTimeout
+const requestIdleCb = window.requestIdleCallback || setTimeout;
 
 // at this point this is just a helper class
 // for op-highlighter component but it could
@@ -86,8 +86,11 @@ module.exports = class DrawingHandler
     this.canvas.style.width = Math.round(canvasWidth / this.ratio) + "px";
     this.canvas.style.height = Math.round(canvasHeight / this.ratio) + "px";
     // draw resized image accordingly with new dimensions
-    this.ctx.drawImage(image, 0, 0, naturalWidth, naturalHeight,
-                              0, 0, canvasWidth, canvasHeight);
+    this.ctx.drawImage(
+      image,
+      0, 0, naturalWidth, naturalHeight,
+      0, 0, canvasWidth, canvasHeight
+    );
     // collect all info to process the iamge data
     this.imageData = this.ctx.getImageData(0, 0, canvasWidth, canvasHeight);
     const data = this.imageData.data;
@@ -109,10 +112,10 @@ module.exports = class DrawingHandler
             notifyColorDepthChanges.call(this, i, length);
             // faster when possible, otherwise less intrusive
             // than a promise based on setTimeout as in legacy code
-            return requestIdleCallback(() =>
+            return requestIdleCb(() =>
             {
               this.draw();
-              requestIdleCallback(() => remap(i + 1));
+              requestIdleCb(() => remap(i + 1));
             });
           }
         }
@@ -173,7 +176,7 @@ module.exports = class DrawingHandler
       return;
 
     // react only if not drawing already
-    stop(event);
+    stopEvent(event);
     this.drawing = true;
     const start = relativeCoordinates(event);
     // set current rect to speed up coordinates updates
@@ -194,7 +197,7 @@ module.exports = class DrawingHandler
       return;
 
     // update the current rect coordinates
-    stop(event);
+    stopEvent(event);
     this.updateRect(event);
     // update the canvas view
     this.draw();
@@ -208,7 +211,7 @@ module.exports = class DrawingHandler
     if (!this.drawing)
       return;
 
-    stop(event);
+    stopEvent(event);
     if (event.currentTarget === this.canvas)
     {
       this.updateRect(event);
@@ -241,17 +244,19 @@ module.exports = class DrawingHandler
     parent.appendChild(wire()`
       <span
         class="closer"
-        onclick="${evt =>
-        {
-          if (!utils.event.isLeftClick(evt))
-            return;
-          // when clicked, remove the related rectangle
-          // and draw the canvas again
-          stop(evt);
-          parent.removeChild(evt.currentTarget);
-          this.paths.delete(rect);
-          this.draw();
-        }}"
+        onclick="${
+          evt =>
+          {
+            if (!utils.event.isLeftClick(evt))
+              return;
+            // when clicked, remove the related rectangle
+            // and draw the canvas again
+            stopEvent(evt);
+            parent.removeChild(evt.currentTarget);
+            this.paths.delete(rect);
+            this.draw();
+          }
+        }"
         style="${{
           // always top right corner
           top: closeCoords.y + "px",
@@ -289,7 +294,7 @@ function getRelativeCoordinates(canvas, start, end)
 
 // prevent events from doing anything
 // in the current node, and every parent too
-function stop(event)
+function stopEvent(event)
 {
   event.preventDefault();
   event.stopPropagation();

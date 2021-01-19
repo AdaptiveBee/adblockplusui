@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Fier in jildige URL yn"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL moat begjinne mei $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "In filterlist tafoegje"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Om feilichheidsredenen kinne allinnich HTTPS-filterlisten tafoege wurde."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Flater bard"
   },
   "options_dialog_language_other_empty": {
     "message": "Der binne gjin beskikbere talen."
@@ -115,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Ja, dizze filterlist brûke"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Binne jo wis dat jo dizze filterlist tafoegje wolle?"
@@ -160,6 +180,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Mislearre, gjin jildich adres"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download mislearre. URL moat begjinne mei $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minuten lyn"
@@ -275,12 +303,6 @@
   "options_protection_social_tooltip": {
     "message": "Fia de sosjale-mediapiktogrammen op de websites dy't jo besykje, kinne sosjale-medianetwurken in profyl fan jo opboue op basis fan jo sneupgedrach - sels wannear't jo hjir net op klikke. It ferstopjen fan dizze knoppen kin jo profyl beskermje."
   },
-  "options_rating_description": {
-    "message": "Nim in momint en help de boadskip te fersprieden troch Adblock Plus te beoardielen. Tank foar jo stipe!"
-  },
-  "options_rating_title": {
-    "message": "Genietsje jo fan Adblock Plus?"
-  },
   "options_report_bug": {
     "message": "In bug fûn? <a>Stjoer ús in bugrapport</a>"
   },
@@ -347,6 +369,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Hjir wurde websites toand dy't jo fertrouwe en wêrop jo advertinsjes tastean wolle."
+  },
+  "options_whitelist_notification": {
+    "message": "Website is op de wite list pleatst."
   },
   "options_whitelist_placeholder_example": {
     "message": "byg. $domain$",

@@ -1,6 +1,6 @@
 {
   "continue": {
-    "message": "下一步"
+    "message": "继续"
   },
   "filters_subscription_lastDownload_connectionError": {
     "message": "失败，下载失败"
@@ -71,17 +71,20 @@
   "issueReporter_markIssueButton_label": {
     "message": "标记问题"
   },
+  "issueReporter_other_issues": {
+    "message": "对于所有其他问题，请通过 <a0>support@adblockplus.org</a0> 联系我们。"
+  },
   "issueReporter_page_title": {
     "message": "问题报告"
   },
   "issueReporter_privacyPolicy": {
-    "message": "隐私策略"
+    "message": "隐私政策"
   },
   "issueReporter_processing_screenshot": {
     "message": "处理中"
   },
   "issueReporter_screenreader_warning": {
-    "message": "为了帮助我们更好地理解问题，提交问题报告时需要屏幕截图。根据您当前使用的网站，屏幕截图可能包含个人信息。如果您对提交屏幕截图感到不舒服，请将您的问题通过电子邮件发送至 <a0>support@adblockplus.org</a0>。"
+    "message": "为了帮助我们更好地理解问题，提交问题报告时需要屏幕截图。根据您当前使用的网站，屏幕截图可能包含个人信息。如果您不方便提交屏幕截图，请将您的问题通过电子邮件发送至 <a0>support@adblockplus.org</a0>。"
   },
   "issueReporter_screenshot_hide": {
     "message": "隐藏"

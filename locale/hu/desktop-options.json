@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Értesítések engedélyezése az Adblock Plus-tól (a kritikus teljesítményre vonatkozó értesítések mindig megjelennek)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "Az Adblock Plus névjegye"
   },
@@ -95,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Adjon meg egy érvényes URL-t"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "Az URL-címnek a következővel kell kezdődnie: $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Szűrőlista hozzáadása"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Biztonsági okokból csak a <strong>HTTPS</strong> szűrőlisták és <strong>adat</strong> URL-címek hozzáadása végezhető el."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Hiba történt"
   },
   "options_dialog_language_other_empty": {
     "message": "Nincsenek elérhető nyelvek."
@@ -105,10 +128,19 @@
     "message": "Válasszon egy nyelvet"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Igen, szűrőlista használata"
+    "message": "Igen, végezze el e szűrőlista hozzáadást."
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Cím"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL-cím"
   },
   "options_dialog_predefined_title": {
     "message": "Biztosan fel akarja venni ezt a szűrőlistát?"
+  },
+  "options_donate_button": {
+    "message": "Támogatás"
   },
   "options_email": {
     "message": "E-mail:"
@@ -141,16 +173,24 @@
     "message": "Sikertelen, érvénytelen ellenőrzőösszeg"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Sikertelen, letöltési hiba"
+    "message": "Letöltési hiba"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Frissítés…"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Sikertelen, nem érvényes szűrőlista"
+    "message": "A szűrőlista nem érvényes"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Sikertelen, érvénytelen cím"
+    "message": "A cím nem érvényes. Ellenőrizze az URL-címet."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "A letöltés nem sikerült. Az URL-címnek a következővel kell kezdődnie: $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "perccel ezelőtt"
@@ -159,7 +199,7 @@
     "message": "Épp most"
   },
   "options_filterList_source": {
-    "message": "forráskód"
+    "message": "Forrás"
   },
   "options_filterList_title": {
     "message": "Szűrő lista"
@@ -168,10 +208,10 @@
     "message": "Összes szűrőlista frissítése"
   },
   "options_filterList_updateNow": {
-    "message": "frissítés most"
+    "message": "Frissítés most"
   },
   "options_filterList_website": {
-    "message": "weboldal"
+    "message": "Weboldal"
   },
   "options_filter_list_rule": {
     "message": "Szűrő szabály"
@@ -192,6 +232,9 @@
   },
   "options_general_description": {
     "message": "Az Adblock Plus által elrejtett és megjelenített elemek meghatározása"
+  },
+  "options_generic_error": {
+    "message": "Uh oh! Valamilyen hiba történt. Kérlek, próbáld újra."
   },
   "options_help_center": {
     "message": "Válaszokat keres a kérdéseire? <a0>Látogassa meg a Súgóközpontunkat (csak angol nyelven)</a0>"
@@ -216,6 +259,19 @@
   },
   "options_language_header": {
     "message": "Nyelv"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>Tipp:</strong> Csak a szükséges nyelveket válassza ki. Több nyelv kiválasztása lassítja a reklámblokkolót, és ezáltal a böngészési sebességet."
@@ -250,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "A meglátogatott weboldalakon lévő közösségimédia-ikonok lehetővé teszik a közösségi hálózatoknak egy profil felépítését a böngészési szokásai alapján – még akkor is, ha nem kattint rájuk. Az elrejtésük megvédheti a profilját."
   },
-  "options_rating_description": {
-    "message": "Szánjon rá egy pillanatot és segítsen az Adblock Plus értékelésével a jó hírünk terjeszítésében. Köszönjük támogatását!"
-  },
-  "options_rating_title": {
-    "message": "Kedveli az Adblock Plust?"
+  "options_rating_button": {
+    "message": "Értékeljen bennünket"
   },
   "options_report_bug": {
     "message": "Hibát talált? <a>Küldjön hibajelentést nekünk</a>"
@@ -267,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Kapcsolat"
+  },
+  "options_supportUs_description": {
+    "message": "Kérjük, értékelje az ABP alkalmazást vagy támogasson bennünket. Köszönjük támogatását!"
+  },
+  "options_supportUs_title": {
+    "message": "Tetszik az Adblock Plus alkalmazás?"
   },
   "options_support_title": {
     "message": "Támogatás"

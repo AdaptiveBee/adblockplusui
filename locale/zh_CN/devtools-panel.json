@@ -18,10 +18,10 @@
     "message": "来源"
   },
   "devtools_filter_title": {
-    "message": "过滤器"
+    "message": "过滤"
   },
   "devtools_footer": {
-    "message": "<a0>重新加载</a0>页面以查看过滤器更改的效果"
+    "message": "<a0>重新加载</a0>页面以查看过滤更改的效果"
   },
   "devtools_header": {
     "message": "显示<slot1></slot1>类型的<slot0></slot0>项目"

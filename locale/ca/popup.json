@@ -20,32 +20,48 @@
   "promote_abp_module": {
     "message": "Esteu interessat en Adblock Plus per al mòbil?"
   },
+  "refresh_this_page": {
+    "message": "Actualitza aquesta pàgina"
+  },
   "refresh_to_take_effect": {
-    "message": "Feu clic a <strong>Refresca</strong> perquè els canvis tinguin efecte."
+    "message": "Feu clic al botó següent per aplicar els canvis."
   },
   "sendReport": {
     "message": "Notifica un problema"
+  },
+  "share_on_facebook": {
+    "message": "Comparteix al Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Comparteix al Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "He bloquejat $number$ anuncis amb l'Adblock Plus. Proveu-lo. És GRATUÏT!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Comparteix les xifres amb amics"
   },
   "stats_header": {
     "message": "Número d'elements bloquejats"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> en aquesta pàgina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en aquesta pàgina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> en total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "en total"
+  },
+  "status_domain": {
+    "message": "Aquest lloc web:"
   },
   "status_header": {
-    "message": "Bloqueja anuncis a:"
+    "message": "Bloqueja anuncis a"
+  },
+  "status_page": {
+    "message": "Aquesta pàgina:"
   }
 }

@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "Добавить фильтр(ы)?"
-  },
   "block_element": {
     "message": "Заблокировать элемент"
   },
-  "loading": {
-    "message": "Загрузка..."
+  "composer_block": {
+    "message": "Заблокировать"
+  },
+  "composer_cancel": {
+    "message": "Отмена"
+  },
+  "composer_elements": {
+    "message": "элемент(-ов) выбрано"
+  },
+  "composer_loading": {
+    "message": "Идет загрузка..."
+  },
+  "composer_preview": {
+    "message": "Предварительный просмотр"
+  },
+  "composer_undo_preview": {
+    "message": "Выйти из предварительного просмотра"
+  },
+  "composer_unselect": {
+    "message": "Отменить выбор"
   }
 }

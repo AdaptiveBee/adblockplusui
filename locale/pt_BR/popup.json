@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Bloqueie elemento específico nesta página"
+  },
   "click_element_to_block_it": {
     "message": "Clique sobre um elemento na página para o bloquear."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Interessado no Adblock Plus para plataformas móveis?"
   },
+  "refresh_this_page": {
+    "message": "Atualizar esta página"
+  },
   "refresh_to_take_effect": {
-    "message": "Clique em <strong>Atualizar</strong> para efetivar as alterações."
+    "message": "Clique no botão abaixo para que as alterações tenham efeito."
   },
   "sendReport": {
-    "message": "Comunicar problema"
+    "message": "Relatar problema nesta página"
+  },
+  "share_on_facebook": {
+    "message": "Compartilhe no Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Compartilhe no Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Compartilhe no Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Eu bloqueei $number$ anúncios com o Adblock Plus. Experimente, é GRÁTIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Compartilhe números com amigos"
   },
   "stats_header": {
     "message": "Número de artigos bloqueados"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> nesta página",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "nesta página"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> no total",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "no total"
+  },
+  "status_domain": {
+    "message": "Este site:"
   },
   "status_header": {
-    "message": "Bloqueio de anúncios ativo:"
+    "message": "Bloquear anúncios"
+  },
+  "status_page": {
+    "message": "Esta página:"
   }
 }

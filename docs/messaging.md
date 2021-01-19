@@ -30,11 +30,14 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
   - [add](#filtersadd)
   - [get](#filtersget)
   - [importRaw](#filtersimportraw)
+  - [isWhitelisted](#filtersiswhitelisted)
   - [listen](#filterslisten)
   - [remove](#filtersremove)
   - [replace](#filtersreplace)
   - [toggle](#filterstoggle)
+  - [unwhitelist](#filtersunwhitelist)
   - [validate](#filtersvalidate)
+  - [whitelist](#filterswhitelist)
 - prefs
   - [get](#prefsget)
   - [listen](#prefslisten)
@@ -43,9 +46,13 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - notifications
   - [clicked](#notificationsclicked)
   - [get](#notificationsget)
+  - [seen](#notificationsseen)
+- stats
+  - [getBlockedPerPage](#statsgetblockedperpage)
 - subscriptions
   - [add](#subscriptionsadd)
   - [get](#subscriptionsget)
+  - [getInitIssues](#subscriptionsgetinitissues)
   - [listen](#subscriptionslisten)
   - [remove](#subscriptionsremove)
   - [toggle](#subscriptionstoggle)
@@ -63,7 +70,6 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 - **string** what
   - `doclink`
   - `features`
-  - `issues`
   - `localeInfo`
   - `recommendations`
   - `senderId`
@@ -74,9 +80,6 @@ Naming convention: `subject` `.` `action` (e.g. `filters.get`)
 
 **object** features (if "what" is `features`)
 - **boolean** devToolsPanel
-
-**object** issues (if "what" is `issues`)
-- **boolean** filterlistsReinitialized
 
 **object** localeInfo (if "what" is `localeInfo`)
 - **string** bidiDir
@@ -154,6 +157,18 @@ If filter includes `showPageOptions`:
 
 **[FilterError](#filtererror)[]** errors
 
+#### filters.isWhitelisted
+
+**Arguments**
+
+- **object** tab
+
+**Response**
+
+**object** isWhitelisted
+  - **boolean** hostname
+  - **boolean** page
+
 #### filters.listen
 
 **Arguments**
@@ -187,6 +202,11 @@ See [`filterNotifier`][filternotifier].
 - **string** text
 - **boolean** disabled
 
+#### filters.unwhitelist
+
+- **object** tab
+- **boolean** singlePage - to unwhitelist a page instead of the whole domain
+
 #### filters.validate
 
 - **string** text
@@ -194,6 +214,11 @@ See [`filterNotifier`][filternotifier].
 **Response**
 
 **[FilterError](#filtererror)[]** errors
+
+#### filters.whitelist
+
+- **object** tab
+- **boolean** singlePage - to whitelist a page instead of the whole domain
 
 ---
 
@@ -213,7 +238,7 @@ See [`filterNotifier`][filternotifier].
 
 **Arguments**
 
-- **string[]** filter (see [list of preferences](https://hg.adblockplus.org/adblockpluschrome/file/master/lib/prefs.js))
+- **string[]** filter (see [list of preferences](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/prefs.js))
 
 #### prefs.set
 
@@ -251,13 +276,28 @@ See [`filterNotifier`][filternotifier].
 
 **Arguments**
 
-- **string** [displayMethod] - (see [`displayMethods`](https://hg.adblockplus.org/adblockpluschrome/file/master/lib/notificationHelper.js))
+- **string** [displayMethod] - (see [`displayMethods`](https://gitlab.com/eyeo/adblockplus/adblockpluschrome/-/blob/master/lib/notificationHelper.js))
 - (deprecated) **string** locale
-- **string** [url]
 
 **Response**
 
 **Object** notification
+
+#### notifications.seen
+
+---
+
+### stats
+
+#### stats.getBlockedPerPage
+
+**Arguments**
+
+- **[Tab][tab]** tab
+
+**Response**
+
+- **number** blockedPage
 
 ---
 
@@ -285,6 +325,14 @@ See [`filterNotifier`][filternotifier].
 
 **[Subscription](#subscription)[]** subscriptions
 - **string[]** disabledFilters
+
+#### subscriptions.getInitIssues
+
+**Response**
+
+**object** issues
+- **boolean** dataCorrupted
+- **boolean** reinitialized
 
 #### subscriptions.listen
 
@@ -343,4 +391,5 @@ See [`filterNotifier`][filternotifier].
 
 ![Subscription expiration](images/subscription-expiration.svg)
 
-[filternotifier]: https://hg.adblockplus.org/adblockpluscore/file/master/lib/filterNotifier.js
+[filternotifier]: https://gitlab.com/eyeo/adblockplus/adblockpluscore/-/blob/master/lib/filterNotifier.js
+[tab]: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab

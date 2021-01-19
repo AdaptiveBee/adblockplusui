@@ -60,7 +60,7 @@
     "message": "Personalización"
   },
   "options_customize_iconStats": {
-    "message": "Mostrar número de anuncios bloqueados en icono"
+    "message": "Mostrar el número de anuncios bloqueados en el icono"
   },
   "options_customize_showDevToolsPanel": {
     "message": "Mostrar el panel de \"Adblock Plus\" en herramientas del desarrollador"
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduce una dirección URL válida"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "La dirección URL debe empezar por $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Añadir una lista de filtros"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Por motivos de seguridad, solo se pueden añadir listas de filtros <strong>HTTPS</strong> y URL de <strong>datos</strong>."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Se ha producido un error"
   },
   "options_dialog_language_other_empty": {
     "message": "No hay idiomas disponibles."
@@ -114,10 +128,19 @@
     "message": "Seleccionar un idioma"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Sí, utilizar esta lista de filtros"
+    "message": "Sí, añadir esta lista de filtros"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Título"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "¿Seguro que deseas añadir esta lista de filtros?"
+  },
+  "options_donate_button": {
+    "message": "Donar"
   },
   "options_email": {
     "message": "Correo electrónico:"
@@ -144,25 +167,33 @@
     "message": "No has añadido ninguna lista de filtros a Adblock Plus. Las listas de filtros que añadas se mostrarán aquí."
   },
   "options_filterList_hours": {
-    "message": "hace horas"
+    "message": "hace unas horas"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "message": "Error, el checksum no coincide"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Error: error de descarga"
+    "message": "Error de descarga"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Actualizando"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Error: lista de filtros no válida"
+    "message": "Esta lista de filtros no es válida"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Error: dirección no válida"
+    "message": "No es una dirección válida. Comprueba la URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Error de descarga. La dirección URL debe empezar por $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
-    "message": "hace minutos"
+    "message": "hace unos minutos"
   },
   "options_filterList_now": {
     "message": "Hace un momento"
@@ -180,7 +211,7 @@
     "message": "Actualizar ahora"
   },
   "options_filterList_website": {
-    "message": "Página web"
+    "message": "Sitio web"
   },
   "options_filter_list_rule": {
     "message": "Regla del filtro"
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Los iconos de medios sociales en las páginas web que visitas permiten que las redes de medios sociales construyan un perfil tuyo en base a tus hábitos de navegación, incluso cuando no haces clic en ellos. Ocultar estos iconos puede proteger tu perfil."
   },
-  "options_rating_description": {
-    "message": "Ayúdanos a hacer que corra la voz valorando Adblock Plus, es solo un momento. ¡Gracias por tu apoyo!"
-  },
-  "options_rating_title": {
-    "message": "¿Te gusta Adblock Plus?"
+  "options_rating_button": {
+    "message": "Valóranos"
   },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Ponerse en contacto"
+  },
+  "options_supportUs_description": {
+    "message": "Por favor, dedica un momento a valorar ABP o a realizar una donación para el proyecto."
+  },
+  "options_supportUs_title": {
+    "message": "¿Te gusta Adblock Plus?"
   },
   "options_support_title": {
     "message": "Asistencia"

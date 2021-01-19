@@ -45,7 +45,7 @@
     "message": "Rādīt ikonā bloķēto reklāmu skaitu"
   },
   "options_customize_showDevToolsPanel": {
-    "message": "Rādīt 'Adblock plus' paneli izstrādātāju rīkos"
+    "message": "Rādīt 'Adblock Plus' paneli izstrādātāju rīkos"
   },
   "options_customize_showNotifications": {
     "message": "Rādīt noderīgus paziņojumus"
@@ -152,6 +152,14 @@
   "options_filterList_website": {
     "message": "mājaslapa"
   },
+  "options_filters_search_or_add": {
+    "message": "Meklēt vai pievienot filtru (piem. $filter$)",
+    "placeholders": {
+      "filter": {
+        "content": "/ads/track/*"
+      }
+    }
+  },
   "options_footer_about": {
     "message": "Par Adblock Plus"
   },
@@ -173,8 +181,27 @@
   "options_language_description": {
     "message": "Optimizējiet Adblock Plus valodām, kurās parasti pārlūkojat tīmekļvietnes."
   },
+  "options_language_empty": {
+    "message": "Nav ar valodu saistītu filtru."
+  },
+  "options_language_filter_list": {
+    "message": "Valodu filtru saraksts"
+  },
   "options_language_header": {
     "message": "Valoda"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>PADOMS:</strong> Izvēlieties tikai nepieciešamās valodas. Izvēloties vairāk, tiek palēnināts reklāmu bloķētājs un pārlūkošanas ātrums."

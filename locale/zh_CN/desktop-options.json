@@ -1,6 +1,6 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "为了帮助我们改进 Adblock Plus，是否介意分享为什么关闭可接受广告？"
+    "message": "为了帮助我们改进 Adblock Plus，是否介意分享您关闭可接受广告的原因？"
   },
   "options_aa_opt_out_survey_no": {
     "message": "不用了，谢谢"
@@ -42,10 +42,10 @@
     "message": "取消"
   },
   "options_customFilters_description": {
-    "message": "创建并维护自己的过滤器，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤器（仅限英文）</a0>"
+    "message": "创建并维护自己的过滤，以进一步控制 Adblock Plus 允许或拦截的内容。<a0>了解如何编写过滤（仅限英文）</a0>"
   },
   "options_customFilters_title": {
-    "message": "您的自定义过滤器"
+    "message": "您的自定义过滤"
   },
   "options_customFilters_widget_title": {
     "message": "我的过滤列表"
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "输入有效的 URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL 必须以 $protocol$ 开头。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "添加过滤列表"
+  },
+  "options_dialog_invalid_message": {
+    "message": "出于安全原因，仅可添加 <strong>HTTPS</strong> 筛选器列表和<strong>数据</strong> URL。"
+  },
+  "options_dialog_invalid_title": {
+    "message": "发生错误"
   },
   "options_dialog_language_other_empty": {
     "message": "没有可用的语言。"
@@ -114,16 +128,25 @@
     "message": "选择语言"
   },
   "options_dialog_predefined_confirm": {
-    "message": "是，使用此过滤规则列表"
+    "message": "是的，添加此筛选器列表"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "标题"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "您确定要添加此过滤列表吗？"
+  },
+  "options_donate_button": {
+    "message": "捐赠"
   },
   "options_email": {
     "message": "电子邮件："
   },
   "options_english": {
-    "message": "英語"
+    "message": "英语"
   },
   "options_filterList_add": {
     "message": "通过 URL 添加过滤列表"
@@ -138,28 +161,36 @@
     "message": "最近更新时间"
   },
   "options_filterList_description": {
-    "message": "每个 Adblock Plus 设置由于过滤列表而起作用。以下是与所有 Adblock Plus 设置相对应的过滤列表。您还可以添加由我们信任的社区创建和维护的其他过滤器。"
+    "message": "每个 Adblock Plus 设置由于过滤列表而起作用。以下是与所有 Adblock Plus 设置相对应的过滤列表。您还可以添加由我们信任的社区创建和维护的其他过滤。"
   },
   "options_filterList_empty": {
     "message": "您尚未向 Adblock Plus 添加过滤列表。您添加的过滤列表将显示在此处。"
   },
   "options_filterList_hours": {
-    "message": "小时前"
+    "message": "几小时以前"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "失败，检验和不匹配"
+    "message": "失败，校验和不匹配"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "失败，下载失败"
+    "message": "下载失败"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "正在更新"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "失败，不是有效的过滤规则列表"
+    "message": "筛选器列表无效"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "失败，不是有效地址"
+    "message": "地址无效。请检查 URL。"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "下载失败。URL 必须以 $protocol$ 开头。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "几分钟前"
@@ -177,7 +208,7 @@
     "message": "更新所有过滤列表"
   },
   "options_filterList_updateNow": {
-    "message": "现在更新"
+    "message": "立即更新"
   },
   "options_filterList_website": {
     "message": "网站"
@@ -186,7 +217,7 @@
     "message": "过滤规则"
   },
   "options_filters_search_or_add": {
-    "message": "搜索或添加过滤器（例如$filter$）",
+    "message": "搜索或添加过滤（例如$filter$）",
     "placeholders": {
       "filter": {
         "content": "/ads/track/*"
@@ -221,7 +252,7 @@
     "message": "为您平日浏览网站的语言优化 Adblock Plus。"
   },
   "options_language_empty": {
-    "message": "您没有任何特定语言的过滤器。"
+    "message": "您没有任何特定语言的过滤。"
   },
   "options_language_filter_list": {
     "message": "语言过滤列表"
@@ -249,7 +280,7 @@
     "message": "了解详情"
   },
   "options_more_filters_description": {
-    "message": "这些是您以前添加到 Adblock Plus 的其他过滤器。"
+    "message": "这些是您以前添加到 Adblock Plus 的其他过滤。"
   },
   "options_more_filters_header": {
     "message": "更多过滤器"
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "您访问的网站上的社交媒体图标允许社交媒体网络根据您的浏览习惯建立您的个人资料记录——即使您没有点击它们。隐藏这些图标可以保护您的个人资料。"
   },
-  "options_rating_description": {
-    "message": "请花一点时间为 Adblock Plus 评分，帮助它宣传。感谢您的支持！"
-  },
-  "options_rating_title": {
-    "message": "喜欢 Adblock Plus？"
+  "options_rating_button": {
+    "message": "评价我们"
   },
   "options_report_bug": {
     "message": "发现错误？<a>向我们发送错误报告</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "保持联系"
+  },
+  "options_supportUs_description": {
+    "message": "请花一点时间评价 ABP 或对项目进行捐赠。感谢您的支持！"
+  },
+  "options_supportUs_title": {
+    "message": "喜欢 Adblock Plus？"
   },
   "options_support_title": {
     "message": "支持"

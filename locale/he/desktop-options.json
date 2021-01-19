@@ -42,7 +42,7 @@
     "message": "בטל"
   },
   "options_customFilters_description": {
-    "message": "צור ותחזק מסננים משלך כדי לשלוט יותר איזה תוכן Adblock Plus מתיר או חוסם. <a0>למד כיצד לכתוב מסננים</a0>"
+    "message": "צור ותחזק מסננים משלך כדי לשלוט יותר איזה תוכן Adblock Plus מתיר או חוסם. <a0>למד כיצד לכתוב מסננים (אנגלית בלבד)</a0>"
   },
   "options_customFilters_title": {
     "message": "מסננים מותאמים אישית"
@@ -51,7 +51,7 @@
     "message": "רשימת המסננים שלי"
   },
   "options_customize_blockElement": {
-    "message": "הראה פריט 'חסום יסוד' של תפריט לחיצה ימנית"
+    "message": "הראה פריט 'חסום אלמנט' של תפריט לחיצה ימנית"
   },
   "options_customize_blockElement_tooltip": {
     "message": "חסום באופן זמני פריטים מטרידים באתר. לדוגמה, תמונות או מצגות מונפשות."
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "הכנס כתובת תקפה"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "כתובת חייבת להתחיל ב־$protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "הוסף רשימת מסננים"
+  },
+  "options_dialog_invalid_message": {
+    "message": "למען סיבות אבטחה, רק רשימות מסננים מסוג <strong>HTTPS</strong> וכתובות <strong>נתונים</strong> יכולות להתווסף."
+  },
+  "options_dialog_invalid_title": {
+    "message": "שגיאה התרחשה"
   },
   "options_dialog_language_other_empty": {
     "message": "אין שפות זמינות."
@@ -114,19 +128,28 @@
     "message": "בחר שפה"
   },
   "options_dialog_predefined_confirm": {
-    "message": "כן, השתמש ברשימת מסננים זו"
+    "message": "כן, הוסף רשימת מסננים זו"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "כותרת"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "כתובת"
   },
   "options_dialog_predefined_title": {
     "message": "האם אתה בטוח שאתה רוצה להוסיף רשימת מסננים זו?"
   },
+  "options_donate_button": {
+    "message": "תרום"
+  },
   "options_email": {
-    "message": "דוא\"ל:"
+    "message": "דוא״ל:"
   },
   "options_english": {
     "message": "אנגלית"
   },
   "options_filterList_add": {
-    "message": "הוסף רשימת מסננים חדשה"
+    "message": "הוסף רשימת מסננים דרך כתובת"
   },
   "options_filterList_column_name": {
     "message": "רשימות מסננים"
@@ -138,7 +161,7 @@
     "message": "עודכן לאחרונה"
   },
   "options_filterList_description": {
-    "message": "כל הגדרת Adblock Plus מתפקדת הודות לרשימת מסננים. להלן רשימות המסננים המותאמות לכל הגדרות Adblock Plus שלך. אתה יכול גם להוסיף מסננים נוספים שנוצרו ומתוחזקים ע\"י הקהילה המהימנה שלנו."
+    "message": "כל הגדרת Adblock Plus מתפקדת הודות לרשימת מסננים. להלן רשימות המסננים המותאמות לכל הגדרות Adblock Plus שלך. אתה יכול גם להוסיף מסננים נוספים שנוצרו ומתוחזקים ע״י הקהילה המהימנה שלנו."
   },
   "options_filterList_empty": {
     "message": "לא הוספת רשימות מסננים כלשהן אל Adblock Plus. רשימות מסננים שאתה מוסיף יופיעו כאן."
@@ -147,19 +170,27 @@
     "message": "שעות קודם לכן"
   },
   "options_filterList_lastDownload_checksumMismatch": {
-    "message": "נכשל, ביקורת סיכום לא מתאימה"
+    "message": "נכשל, סיכום ביקורת אינו תואם"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "נכשל, כישלון הורדה"
+    "message": "כישלון הורדה"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "מעדכן"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "נכשל, רשימת מסננים לא תקפה"
+    "message": "זו לא רשימת מסננים תקפה"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "נכשל, כתובת לא תקפה"
+    "message": "זו לא כתובת תקפה. בדוק את הכתובת."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "הורדה נכשלה. כתובת חייבת להתחיל ב־$protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "דקות קודם לכן"
@@ -218,7 +249,7 @@
     "message": "שנה"
   },
   "options_language_description": {
-    "message": "מטב את Adblock Plus אל השפות שאתה בד\"כ גולש בהן באתרים."
+    "message": "מטב את Adblock Plus אל השפות שאתה בד״כ גולש בהן באתרים."
   },
   "options_language_empty": {
     "message": "אין לך מסננים כלשהם של שפות יחודיות."
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "צלמיות המדיה החברתית באתרים שאתה מבקר בהם מתירות לרשתות מדיה חברתית לבנות פרופיל שלך על סמך הרגלי גלישתך - אפילו אם אתה לא לוחץ עליהן. הסתרת צלמיות אלו יכולה להגן על הפרופיל שלך."
   },
-  "options_rating_description": {
-    "message": "אנא קח רגע ועזור להפיץ את הידיעה ע\"י דירוג Adblock Plus. תודה על תמיכתך!"
-  },
-  "options_rating_title": {
-    "message": "נהנה מ־Adblock Plus?"
+  "options_rating_button": {
+    "message": "דרג אותנו"
   },
   "options_report_bug": {
     "message": "מצאת תקל? <a>שלח לנו דיווח תקלים</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "שמור על קשר"
+  },
+  "options_supportUs_description": {
+    "message": "אנא קח רגע כדי לדרג את ABP או כדי לתרום אל המיזם. תודה על תמיכתך!"
+  },
+  "options_supportUs_title": {
+    "message": "נהנה מ־Adblock Plus?"
   },
   "options_support_title": {
     "message": "תמיכה"
@@ -347,6 +381,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "אתרים שאתה בוטח בהם ורוצה להתיר בהם פרסומות יופיעו כאן."
+  },
+  "options_whitelist_notification": {
+    "message": "אתר התווסף לרשימה הלבנה."
   },
   "options_whitelist_placeholder_example": {
     "message": "לדוגמה $domain$",

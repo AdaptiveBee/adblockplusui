@@ -95,8 +95,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "有効な URL を入力してください"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL は $protocol$で始まる必要があります。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "フィルターリストを追加"
+  },
+  "options_dialog_invalid_message": {
+    "message": "セキュリティ上の理由により、<strong>HTTPS</strong> フィルタリストと<strong>データ</strong>のみ追加できます。"
+  },
+  "options_dialog_invalid_title": {
+    "message": "エラーが発生しました"
   },
   "options_dialog_language_other_empty": {
     "message": "利用可能な言語がありません。"
@@ -105,13 +119,19 @@
     "message": "言語の選択"
   },
   "options_dialog_predefined_confirm": {
-    "message": "はい、このフィルターリストを使用します"
+    "message": "はい。このフィルターリストを追加します"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "タイトル"
   },
   "options_dialog_predefined_title": {
     "message": "個のフィルターリストを追加しますか？"
   },
+  "options_donate_button": {
+    "message": "寄付を送る"
+  },
   "options_email": {
-    "message": "Eメール:"
+    "message": "メール:"
   },
   "options_english": {
     "message": "英語"
@@ -141,16 +161,24 @@
     "message": "更新失敗: チェックサム不一致"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "更新失敗: 接続エラー"
+    "message": "ダウンロード障害"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "更新中"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "更新失敗: フィルターリスト無効"
+    "message": "有効なフィルタリストではありません。"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "更新失敗: アドレス無効"
+    "message": "有効なアドレスではありません。URL をクリックしてください。"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "ダウンロードに失敗しました。URL は $protocol$で始まる必要があります。",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "分前"
@@ -168,7 +196,7 @@
     "message": "すべてのフィルターリストを更新"
   },
   "options_filterList_updateNow": {
-    "message": "今すぐ更新"
+    "message": "すぐに更新"
   },
   "options_filterList_website": {
     "message": "ウェブサイト"
@@ -255,11 +283,8 @@
   "options_protection_social_tooltip": {
     "message": "閲覧したウェブサイトにあるソーシャルメディア アイコンでは、このをクリックしない場合でも、ユーザーの習慣的な閲覧履歴に基づいてプロファイルを構築します。このようなアイコン を非表示して、自分のプロファイルを守ることができます。"
   },
-  "options_rating_description": {
-    "message": "Adblock Plus を評価して、クチコミ拡散にご協力ください。サポートありがとうございます。"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus の満足度は？"
+  "options_rating_button": {
+    "message": "評価する"
   },
   "options_report_bug": {
     "message": "バグがあった場合<a>バグ報告を送信</a>してください"
@@ -272,6 +297,12 @@
   },
   "options_social_title": {
     "message": "お問い合わせ"
+  },
+  "options_supportUs_description": {
+    "message": "ABP の評価をお願いします。また、プロジェクトへの寄付も募集しております。ご協力ありがとうございます。"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus をお楽しみいただいていますか。"
   },
   "options_support_title": {
     "message": "サポート"

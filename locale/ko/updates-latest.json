@@ -1,0 +1,35 @@
+{
+  "notification_updates_message": {
+    "message": "아무 조치도 필요 없습니다. 짜증 나는 광고 없이 인터넷을 이용하세요! <a>새소식</a>"
+  },
+  "notification_updates_title": {
+    "message": "Adblock Plus가 최신 상태입니다"
+  },
+  "updates_update_i1_description": {
+    "message": "\"요소 차단\" 기능의 간단한 설명 추가 및 신고 버튼 설명 개선."
+  },
+  "updates_update_i1_title": {
+    "message": "ABP 사용자 인터페이스가 더욱 편리해졌습니다."
+  },
+  "updates_update_i2_description": {
+    "message": "요소 차단 기능에 간단한 설명을 추가하고 거슬리는 요소 없이 페이지가 어떻게 표시되는지 미리 볼 수 있도록 해서 기능 이용이 더 쉬워졌습니다. 사용해보세요!"
+  },
+  "updates_update_i2_image": {
+    "message": "다시 디자인한 \"요소 차단\" 버튼 아이콘 팝업 예시."
+  },
+  "updates_update_i2_title": {
+    "message": "요소 차단 기능 업데이트 및 개선"
+  },
+  "updates_update_i3_description": {
+    "message": "CSS 선택기를 포함하여 긴 필터 전체를 볼 수 있습니다."
+  },
+  "updates_update_i3_title": {
+    "message": "개발자 도구 패널 툴팁 길이 확장"
+  },
+  "updates_update_i4_description": {
+    "message": "사용자 알림을 위해 아이콘이 깜빡이고 파란색으로 변하도록 변경되었습니다."
+  },
+  "updates_update_i4_title": {
+    "message": "ABP 작업표시줄 아이콘 알림을 보다 명확하고 눈에 띄도록 변경"
+  }
+}

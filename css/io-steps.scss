@@ -20,6 +20,7 @@ io-steps
   display: flex;
   position: relative;
   margin: 0;
+  margin-top: 2rem;
   padding: 0;
   justify-content: space-between;
 }
@@ -39,7 +40,7 @@ io-steps::before
 }
 
 html:not([dir="rtl"]) io-steps button,
-io-steps button
+html[dir="rtl"] io-steps button
 {
   margin: initial;
   padding: initial;
@@ -50,7 +51,7 @@ io-steps button
   min-width: 80px;
   border: 0;
   outline: none;
-  color: #077ca7;
+  color: #0797E1;
   background: #f3f3f3;
   font-size: small;
   font-weight: initial;
@@ -66,7 +67,7 @@ io-steps button::before
   margin-bottom: 8px;
   border-radius: 12px;
   color: #fafbfd;
-  background-color: #077ca7;
+  background-color: #0797E1;
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 24px;

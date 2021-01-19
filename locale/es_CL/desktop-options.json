@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Introduzca una URL válida"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "La URL debe comenzar con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Agregar una lista de filtros"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Por motivos de seguridad, solo se pueden agregar listas de filtros HTTPS."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Ocurrió un error"
   },
   "options_dialog_language_other_empty": {
     "message": "Hay no hay lenguajes disponibles."
@@ -115,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "Sí, utilizar esta lista de filtros"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Título"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "¿Estás seguro de querer agregar esta lista de filtros?"
@@ -160,6 +180,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "Fallido, no es una dirección válida"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Descarga fallida. La URL debe comenzar con $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "hace minutos"
@@ -274,12 +302,6 @@
   },
   "options_protection_social_tooltip": {
     "message": "Los botones de redes sociales en los sitios web que visitas permiten que las redes sociales construyan un perfil de ti basado en tus hábitos de navegación - incluso cuando no has hecho clic en ellos. Ocultando estos botones puedes proteger tu perfil."
-  },
-  "options_rating_description": {
-    "message": "Por favor, tómate un momento y ayuda a difundir la palabra calificando a Adblock Plus. ¡Gracias por tu apoyo!"
-  },
-  "options_rating_title": {
-    "message": "¿Disfrutando Adblock Plus?"
   },
   "options_report_bug": {
     "message": "¿Encontraste un error? <a>Envíanos un informe de error</a>"

@@ -19,6 +19,7 @@
 
 "use strict";
 
+let initialFilterText = "";
 let targetPageId = null;
 const {stripTagsUnsafe} = ext.i18n;
 
@@ -29,18 +30,14 @@ function onKeyDown(event)
     event.preventDefault();
     closeDialog();
   }
-  else if (event.keyCode == 13 && !event.shiftKey && !event.ctrlKey)
-  {
-    event.preventDefault();
-    addFilters();
-  }
 }
 
 function addFilters()
 {
+  const textarea = document.getElementById("filters");
   browser.runtime.sendMessage({
     type: "filters.importRaw",
-    text: document.getElementById("filters").value
+    text: textarea.value
   }).then((errors) =>
   {
     if (errors.length > 0)
@@ -56,16 +53,27 @@ function addFilters()
 // We'd rather just call window.close, but that isn't working consistently with
 // Firefox 57, even when allowScriptsToClose is passed to browser.windows.create
 // See https://bugzilla.mozilla.org/show_bug.cgi?id=1418394
+// window.close is also broken on Firefox 63.x
+// See https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/-/issues/791#note_374617568
 function closeMe()
 {
   browser.runtime.sendMessage({
     type: "app.get",
     what: "senderId"
-  }).then(tabId => browser.tabs.remove(tabId));
+  }).then(tabId =>
+    browser.tabs.remove(tabId).catch(err =>
+    {
+      // Opera 68 throws a "Tabs cannot be edited right now (user may be
+      // dragging a tab)." exception when we attempt to close the window
+      // using `browser.tabs.remove`.
+      window.close();
+    })
+  );
 }
 
-function closeDialog(success)
+function closeDialog(success = false)
 {
+  document.getElementById("filters").disabled = true;
   browser.runtime.sendMessage({
     type: "composer.forward",
     targetPageId,
@@ -73,10 +81,67 @@ function closeDialog(success)
     {
       type: "composer.content.finished",
       popupAlreadyClosed: true,
-      remove: (typeof success == "boolean" ? success : false)
+      remove: !!success
     }
+  }).then(() =>
+  {
+    closeMe();
   });
-  closeMe();
+}
+
+function resetFilters()
+{
+  browser.tabs.sendMessage(targetPageId, {
+    type: "composer.content.finished"
+  }).then(() =>
+  {
+    browser.tabs.sendMessage(targetPageId, {
+      type: "composer.content.startPickingElement"
+    }).then(closeMe);
+  });
+}
+
+function previewFilters({currentTarget})
+{
+  const {preview} = currentTarget.dataset;
+  const wasActive = preview === "active";
+
+  const filtersTextArea = document.getElementById("filters");
+
+  // if it is inactive, disable the textarea upfront
+  if (!wasActive)
+    filtersTextArea.disabled = true;
+
+  browser.runtime.sendMessage({
+    type: "composer.forward",
+    targetPageId,
+    payload:
+    {
+      type: "composer.content.preview",
+      // toggle the preview mode
+      active: !wasActive
+    }
+  }).then(() =>
+  {
+    // if it was active, it's now inactive so the area should be editable
+    if (wasActive)
+      filtersTextArea.disabled = false;
+
+    // toggle both data-preview and the button message accordingly
+    currentTarget.dataset.preview = wasActive ? "inactive" : "active";
+    currentTarget.textContent =
+      browser.i18n.getMessage(
+        wasActive ? "composer_preview" : "composer_undo_preview"
+      );
+  });
+}
+
+function updateComposerState({currentTarget})
+{
+  const {value} = currentTarget;
+  const disabled = !value.trim().length;
+  document.getElementById("block").disabled = disabled;
+  document.getElementById("preview").disabled = initialFilterText !== value;
 }
 
 function init()
@@ -84,12 +149,19 @@ function init()
   // Attach event listeners
   window.addEventListener("keydown", onKeyDown, false);
 
-  document.getElementById("addButton").addEventListener("click", addFilters);
-  document.getElementById("cancelButton").addEventListener(
+  const block = document.getElementById("block");
+  block.addEventListener("click", addFilters);
+
+  const preview = document.getElementById("preview");
+  preview.addEventListener("click", previewFilters);
+
+  const filtersTextArea = document.getElementById("filters");
+  filtersTextArea.addEventListener("input", updateComposerState);
+
+  document.getElementById("unselect").addEventListener("click", resetFilters);
+  document.getElementById("cancel").addEventListener(
     "click", closeDialog.bind(null, false)
   );
-
-  document.getElementById("filters").focus();
 
   ext.onMessage.addListener((msg, sender, sendResponse) =>
   {
@@ -97,10 +169,13 @@ function init()
     {
       case "composer.dialog.init":
         targetPageId = msg.sender;
-        const filtersTextArea = document.getElementById("filters");
-        filtersTextArea.value = msg.filters.join("\n");
+        initialFilterText = msg.filters.join("\n");
+        filtersTextArea.value = initialFilterText;
         filtersTextArea.disabled = false;
-        document.getElementById("addButton").disabled = false;
+        preview.disabled = false;
+        block.disabled = false;
+        block.focus();
+        document.getElementById("selected").dataset.count = msg.highlights;
 
         // Firefox sometimes tells us this window had loaded before it has[1],
         // to work around that we send the "composer.dialog.init" message again
@@ -119,4 +194,5 @@ function init()
 
   window.removeEventListener("load", init);
 }
+
 window.addEventListener("load", init, false);

@@ -23,6 +23,9 @@
   "issueReporter_comment_label": {
     "message": "Kommentar (valgfritt):"
   },
+  "issueReporter_config_label": {
+    "message": "Inkluder informasjon om nettleserinnstillingene mine, i tillegg til en liste over alle utvidelsene jeg bruker."
+  },
   "issueReporter_confirmationMessage": {
     "message": "Rapporten er lagret. Du kan få tilgang til den på følgende internettadresse:"
   },
@@ -67,6 +70,9 @@
   },
   "issueReporter_markIssueButton_label": {
     "message": "Marker problem"
+  },
+  "issueReporter_other_issues": {
+    "message": "Hvis du opplever andre problemer, kan du kontakte oss via <a0>support@adblockplus.org</a0>."
   },
   "issueReporter_page_title": {
     "message": "Problemrapporterer"

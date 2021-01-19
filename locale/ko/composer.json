@@ -1,11 +1,26 @@
 {
-  "add_filters_msg": {
-    "message": "새 필터를 추가하시겠습니까?"
-  },
   "block_element": {
     "message": "이 요소 숨기기"
   },
-  "loading": {
-    "message": "로드 중입니다..."
+  "composer_block": {
+    "message": "차단"
+  },
+  "composer_cancel": {
+    "message": "취소"
+  },
+  "composer_elements": {
+    "message": "선택된 요소"
+  },
+  "composer_loading": {
+    "message": "로딩 중..."
+  },
+  "composer_preview": {
+    "message": "미리 보기"
+  },
+  "composer_undo_preview": {
+    "message": "미리 보기 종료"
+  },
+  "composer_unselect": {
+    "message": "선택 해제"
   }
 }

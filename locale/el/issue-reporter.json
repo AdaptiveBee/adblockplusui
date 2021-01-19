@@ -56,11 +56,14 @@
   "issueReporter_knownIssueMessage": {
     "message": "Το ζήτημα που αναφέρατε είναι πιθανώς ήδη γνωστό. Περισσότερες πληροφορίες:"
   },
+  "issueReporter_other_issues": {
+    "message": "Για κάθε άλλο ζήτημα, επικοινωνήστε μαζί μας μέσω της ηλεκτρονικής διεύθυνσης <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Αναφορά ζητήματος"
   },
   "issueReporter_privacyPolicy": {
-    "message": "Πολιτική απορρήτου"
+    "message": "Πολιτική ιδιωτικού απορρήτου"
   },
   "issueReporter_sendButton_label": {
     "message": "Αποστολή αναφοράς"

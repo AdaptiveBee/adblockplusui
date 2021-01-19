@@ -157,7 +157,7 @@
     "message": "<strong>TIP:</strong> Only select the languages you need. Selecting more will slow down the ad blocker and, therefore, your browsing speed."
   },
   "options_language_join": {
-    "description": "Combines language filter list specifications(language names) together, ex: -> https://gitlab.com/eyeo/specs/spec/blob/master/spec/abp/options-page.md#language-drop-down",
+    "description": "Combines language filter list specifications(language names) together, ex: -> https://gitlab.com/eyeo/specs/spec/blob/5a876713adebe79842be51ad6e287b1c675e023a/spec/abp/desktop-settings.md#language-drop-down",
     "message": "$lang1$, $lang2$",
     "placeholders": {
       "lang1": {
@@ -317,15 +317,24 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "description": "Error message in advanced tab",
-    "message": "Failed, not a valid address"
+    "message": "Not a valid address. Check the URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#filter-list-error-statuses",
+    "message": "Download failed. URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_lastDownload_connectionError": {
     "description": "Error message in advanced tab",
-    "message": "Failed, download failure"
+    "message": "Download failure"
   },
   "options_filterList_lastDownload_invalidData": {
     "description": "Error message in advanced tab",
-    "message": "Failed, not a valid filter list"
+    "message": "Not a valid filter list"
   },
   "options_filterList_lastDownload_checksumMismatch": {
     "description": "Error message in advanced tab",
@@ -337,15 +346,15 @@
   },
   "options_filterList_updateNow": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "update now"
+    "message": "Update now"
   },
   "options_filterList_website": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "website"
+    "message": "Website"
   },
   "options_filterList_source": {
     "description": "Context menu item in advanced tab, appears after click on subscription",
-    "message": "source"
+    "message": "Source"
   },
   "options_customFilter_cancel": {
     "description": "Label below raw view of user's filter list in Advanced tab",
@@ -410,9 +419,25 @@
     "description": "Trademark information in 'about Adblock Plus' modal dialog",
     "message": "All rights reserved. Adblock Plus® is a registered trademark of eyeo GmbH."
   },
+  "options_dialog_invalid_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Error occurred"
+  },
+  "options_dialog_invalid_message": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/0a80698daaa8097c0cfa5ba1b826bc61b00deace/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "For security reasons, only <strong>HTTPS</strong> filter lists and <strong>data</strong> URLs can be added."
+  },
   "options_dialog_predefined_confirm": {
-    "description": "Confirming to add a predefined subscription when asked in a dialog",
-    "message": "Yes, use this filter list"
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Yes, add this filter list"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "Title"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/b386db03aad691f10240385e0ddb2d33c695f4d7/spec/abp/options-page-advanced.md#adding-filter-lists-via-subscribe-links",
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "description": "Dialog title for adding a predefined subscription",
@@ -434,6 +459,15 @@
     "description": "Error message of 'Filter list URL' input in 'Add a filter list' dialog",
     "message": "Enter a valid URL"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/3cc72ea11b4e085a1f791e25c92a8f8776be4dd1/spec/abp/options-page.md#add-custom-subscription-popup-invalid",
+    "message": "URL must start with $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_language_title": {
     "description": "Title of lanugage modal dialog",
     "message": "Select a language"
@@ -453,12 +487,20 @@
   "options_filter_list_rule": {
     "message": "Filter rule"
   },
-  "options_rating_description": {
-    "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
-    "message": "Please take a moment and help spread the word by rating Adblock Plus. Thanks for your support!"
+  "options_supportUs_description": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Please take a moment to rate ABP or donate to the project. Thanks for your support!"
   },
-  "options_rating_title": {
+  "options_supportUs_title": {
     "description": "https://gitlab.com/eyeo/specs/spec/blob/8f12811171d57b7499d50514283c6ec2d0247b05/spec/abp/options-page.md#store-rating",
     "message": "Enjoying Adblock Plus?"
+  },
+  "options_rating_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/-/blob/53d319c7512cf83e1c2dfd0517885e1e49adecd4/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Rate us"
+  },
+  "options_donate_button": {
+    "description": "https://gitlab.com/eyeo/specs/spec/blob/677a0a3c68c7e96369301813d8b413c6ecd1b381/spec/abp/desktop-settings/index.md#store-rating",
+    "message": "Donate"
   }
 }

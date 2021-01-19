@@ -20,14 +20,15 @@
 require("./io-circle-toggle.js");
 require("./popup.notifications.js");
 
-const setupToggle = require("./popup.toggle.js");
+const setupToggles = require("./popup.toggles.js");
 const setupBlock = require("./popup.blockelement.js");
 const {activeTab} = require("./popup.utils.js");
+const api = require("./api");
+const {createShareLink} = require("./social-media-share.js");
 const {$, $$} = require("./dom");
 
 const {
   getDoclinks,
-  getPref,
   reportIssue,
   whenPageReady
 } = require("./popup.utils.js");
@@ -67,7 +68,7 @@ activeTab.then(tab =>
   }
   else
   {
-    disablePopup();
+    document.body.classList.add("disabled");
     document.body.classList.add("ignore");
     document.body.classList.remove("nohtml");
   }
@@ -76,8 +77,19 @@ activeTab.then(tab =>
 .then(tab =>
 {
   const {url} = tab;
-  const hostname = url ? new URL(url).hostname.replace(/^www\./, "") : "";
+  const defaultDetails = {hostname: "", pathname: "", search: ""};
+  const {hostname, pathname, search} = url ? new URL(url) : defaultDetails;
   $("#blocking-domain").textContent = hostname;
+  let pageContent = pathname;
+  if (!search.includes("&"))
+  {
+    pageContent += search;
+  }
+  else if (search)
+  {
+    pageContent += "?…";
+  }
+  $("#blocking-page").textContent = pageContent;
   $("#issue-reporter").addEventListener(
     "click", () => reportIssue(tab)
   );
@@ -95,19 +107,12 @@ activeTab.then(tab =>
       () => window.close()
     );
   });
-  setupToggle(tab);
-  updateStats(tab);
+  setupToggles(tab);
+  setupStats(tab);
   setupBlock(tab);
+  setupShare();
   setupFooter();
 });
-
-function disablePopup()
-{
-  document.body.classList.add("disabled");
-  const buttons = $$("#page-info button, io-circle-toggle");
-  for (const button of buttons)
-    button.disabled = true;
-}
 
 function setupFooter()
 {
@@ -142,22 +147,91 @@ function gotoMobile(event)
     );
 }
 
-function updateStats(tab)
+function updateStats(tab, blockedTotal)
 {
-  const statsPage = $("#stats-page");
-  browser.runtime.sendMessage({
-    type: "stats.getBlockedPerPage",
-    tab
-  }).then(blockedPage =>
+  api.stats.getBlocked(tab).then((blockedPage) =>
   {
-    ext.i18n.setElementText(statsPage, "stats_label_page",
-                            [blockedPage.toLocaleString()]);
+    $("#stats-page .amount").textContent = blockedPage.toLocaleString();
   });
 
-  const statsTotal = $("#stats-total");
-  getPref("blocked_total").then(blockedTotal =>
+  const total = blockedTotal.toLocaleString();
+  $("#stats-total .amount").textContent = total;
+
+  // whenever the total changes, update social media shared stats links too
+  for (const media of ["facebook", "twitter", "weibo"])
   {
-    ext.i18n.setElementText(statsTotal, "stats_label_total",
-                            [blockedTotal.toLocaleString()]);
+    const link = $(`#counter-panel .share a.${media}`);
+    link.target = "_blank";
+    link.href = createShareLink(media, blockedTotal);
+  }
+}
+
+function setupStats(tab)
+{
+  api.prefs.get("blocked_total").then((blockedTotal) =>
+  {
+    updateStats(tab, blockedTotal);
+  });
+
+  api.port.onMessage.addListener((msg) =>
+  {
+    if (msg.type !== "prefs.respond" || msg.action !== "blocked_total")
+      return;
+
+    updateStats(tab, msg.args[0]);
+  });
+
+  api.port.postMessage({
+    type: "prefs.listen",
+    filter: ["blocked_total"]
+  });
+}
+
+function setupShare()
+{
+  const wrapper = $("#counter-panel .share");
+  const shareButton = $(".enter", wrapper);
+  const cancelButton = $(".cancel", wrapper);
+  const firstFocusable = $("a", wrapper);
+  const indexed = $$("[tabindex]", wrapper);
+
+  const isExpanded = () => wrapper.classList.contains("expanded");
+
+  // when sharing link enters the container, it should get focused,
+  // but only if the focus was still in the sharedButton
+  firstFocusable.addEventListener("transitionend", () =>
+  {
+    if (isExpanded() && document.activeElement === shareButton)
+      firstFocusable.focus();
+  });
+
+  wrapper.addEventListener("transitionend", () =>
+  {
+    const expanded = isExpanded();
+
+    // add/drop tabindex accordingly with the expanded value
+    const tabindex = expanded ? 0 : -1;
+    for (const el of indexed)
+    {
+      el.setAttribute("tabindex", tabindex);
+    }
+    shareButton.setAttribute("tabindex", expanded ? -1 : 0);
+
+    // if it's not expanded, and the cancel was clicked, and it's still focused
+    // move the focus back to the shareButton
+    if (!expanded && document.activeElement === cancelButton)
+      shareButton.focus();
+  });
+
+  shareButton.addEventListener("click", (event) =>
+  {
+    event.preventDefault();
+    wrapper.classList.add("expanded");
+  });
+
+  cancelButton.addEventListener("click", (event) =>
+  {
+    event.preventDefault();
+    wrapper.classList.remove("expanded");
   });
 }

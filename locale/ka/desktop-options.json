@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "შეიყვანეთ მართებული URL-ბმული"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL-ბმულის თავსართი უნდა იყოს $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "ფილტრის დამატება"
+  },
+  "options_dialog_invalid_message": {
+    "message": "უსაფრთხოების მიზნით, მხოლოდ HTTPS-ფილტრების დამატებაა შესაძლებელი."
+  },
+  "options_dialog_invalid_title": {
+    "message": "წარმოიშვა შეცდომა"
   },
   "options_dialog_language_other_empty": {
     "message": "ხელმისაწვდომი ენები არაა."
@@ -115,6 +129,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "დიახ, მსურს ამ ფილტრის გამოყენება"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "სათაური"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "ნამდვილად გსურთ ამ ფილტრის დამატება?"
@@ -160,6 +180,14 @@
   },
   "options_filterList_lastDownload_invalidURL": {
     "message": "შეცდომა, არამართებული მისამართი"
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "ჩამოტვირთვა ვერ მოხერხდა. URL-ს თავსართი უნდა იყოს $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "წუთის წინ"
@@ -261,7 +289,7 @@
     "message": "ახალი"
   },
   "options_page_document_title": {
-    "message": "AdBlock Plus-ის პარამეტრები"
+    "message": "Adblock Plus-ის პარამეტრები"
   },
   "options_page_title": {
     "message": "პარამეტრები"
@@ -274,12 +302,6 @@
   },
   "options_protection_social_tooltip": {
     "message": "ვებსაიტებზე არსებული მოწონების ან გაზიარების ხატულებით, სოციალურ ქსელებს ეძლევა საშუალება შეისწავლოს და შეადგინოს თქვენი პიროვნული დახასიათება, მონახულებული გვერდების საფუძველზე - მიუხედავად იმისა, დააწკაპებთ თუ არა ამ მათზე. ამ ხატულების დამალვა, უზრუნველყოფს თქვენს პირადულობას."
-  },
-  "options_rating_description": {
-    "message": "გთხოვთ, გამონახოთ ერთი წუთი Adblock Plus-ის შესაფასებლად, რომ მეტმა ადამიანმა შეიტყოს მის შესახებ. გმადლობთ თქვენი მხარდაჭერისთვის!"
-  },
-  "options_rating_title": {
-    "message": "მოგეწონათ Adblock Plus?"
   },
   "options_report_bug": {
     "message": "ხარვეზი აღმოაჩინეთ? <a>მოგვახსენეთ ამის შესახებ</a>"
@@ -347,6 +369,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "ვებსაიტები რომელთაც ენდობით და გსურთ მათი რეკლამების ხილვა."
+  },
+  "options_whitelist_notification": {
+    "message": "საიტი დამატებულია გამონაკლისებში."
   },
   "options_whitelist_placeholder_example": {
     "message": "მაგ. $domain$",

@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Blockiere bestimmte Elemente auf dieser Webseite"
+  },
   "click_element_to_block_it": {
     "message": "Klicke auf ein Element auf der Seite, um es zu blockieren."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Hast du Interesse an Adblock Plus fürs Handy?"
   },
+  "refresh_this_page": {
+    "message": "Diese Seite aktualisieren"
+  },
   "refresh_to_take_effect": {
-    "message": "Klicke auf <strong>Aktualisieren</strong>, damit die Änderungen wirksam werden."
+    "message": "Zum Bestätigen der Änderungen klicke auf die nachstehende Schaltfläche."
   },
   "sendReport": {
-    "message": "Problem melden"
+    "message": "Ein Problem auf dieser Seite melden"
+  },
+  "share_on_facebook": {
+    "message": "Auf Facebook teilen"
+  },
+  "share_on_twitter": {
+    "message": "Auf Twitter teilen"
+  },
+  "share_on_twitter_message": {
+    "message": "Ich habe $number$ Werbeanzeigen mit Adblock Plus blockiert. Probier' es mal aus – es ist GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Auf Weibo teilen"
+  },
+  "share_on_weibo_message": {
+    "message": "Ich habe $number$ Werbeanzeigen mit Adblock Plus blockiert. Probier' es mal aus – es ist GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Zahlen mit Freunden teilen"
   },
   "stats_header": {
     "message": "Anzahl blockierter Elemente"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> auf dieser Seite",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "auf dieser Seite"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> gesamt",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "insgesamt"
+  },
+  "status_domain": {
+    "message": "Diese Webseite:"
   },
   "status_header": {
-    "message": "Werbung blockieren auf:"
+    "message": "Werbung blockieren auf"
+  },
+  "status_page": {
+    "message": "Diese Seite:"
   }
 }

@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Geçerli bir URL girin"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL $protocol$ ile başlamalıdır.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Süzgeç listesi ekle"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Güvenlik nedenleriyle, sadece <strong>HTTPS</strong> filtreli listeler ve <strong>veri</strong> URL'leri eklenebilir."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Hata oluştu"
   },
   "options_dialog_language_other_empty": {
     "message": "Kullanılabilir bir dil yok."
@@ -114,10 +128,19 @@
     "message": "Bir dil seçin"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Evet, bu süzme listesini kullan"
+    "message": "Evet, bu filtre listesini ekle"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Başlık"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Bu filtre listesini eklemek istediğinizden emin misiniz?"
+  },
+  "options_donate_button": {
+    "message": "Bağış yapın"
   },
   "options_email": {
     "message": "E-posta:"
@@ -150,16 +173,24 @@
     "message": "Başarısız. Sağlama yapılamadı."
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Başarısız. İndirmede sorun var."
+    "message": "İndirme başarısız"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Güncelleniyor"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Başarısız. Geçerli bir süzgeç listesi değil."
+    "message": "Filtre listesi geçerli değil"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Başarısız. Bu geçerli bir adres değil."
+    "message": "Adres geçerli değil. URL'i kontrol edin."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "İndirme başarısız. URL $protocol$ ile başlamalıdır.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "dakika önce"
@@ -168,7 +199,7 @@
     "message": "Şimdi"
   },
   "options_filterList_source": {
-    "message": "kaynak"
+    "message": "Kaynak"
   },
   "options_filterList_title": {
     "message": "Süzgeç listeleri"
@@ -177,10 +208,10 @@
     "message": "tüm süzgeç listelerini güncelle"
   },
   "options_filterList_updateNow": {
-    "message": "şimdi güncelle"
+    "message": "Hemen güncelle"
   },
   "options_filterList_website": {
-    "message": "site"
+    "message": "Web sitesi"
   },
   "options_filter_list_rule": {
     "message": "Süzgeç kuralı"
@@ -229,6 +260,19 @@
   "options_language_header": {
     "message": "Dil"
   },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
+  },
   "options_language_tip": {
     "message": "<strong>İPUCU:</strong> Sadece ihtiyaç duyduğunuz dilleri seçin. Daha fazla dil seçmek reklam engelleyiciyi, dolayısıyla tarama hızınızı azaltacak."
   },
@@ -262,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Ziyaret ettiğiniz sayfalarda yer alan sosyal medya düğmeleri (veya simgeleri) tarama alışkanlıklarınızı temel alarak sizin bir \"resminizi\" oluşturur. Kimliğinizi korumak için bu düğmeleri gizleyin."
   },
-  "options_rating_description": {
-    "message": "Lütfen birkaç dakikanızı ayırın ve Adblock Plus'ı değerlendirerek herkesin Adblock Plus'ı tanımasına yardımcı olun. Desteğiniz için teşekkür ederiz!"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus'ı beğendiniz mi?"
+  "options_rating_button": {
+    "message": "Bizi değerlendirin"
   },
   "options_report_bug": {
     "message": "Hataya mı rastladınız? <a>Sorunu bize bildirin.</a>"
@@ -279,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Temas kur"
+  },
+  "options_supportUs_description": {
+    "message": "Lütfen bir dakikanızı ayırarak ABP'yi değerlendirin veya projeye bağış yapın. Desteğiniz için teşekkür ederiz!"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus'tan keyif alıyor musunuz?"
   },
   "options_support_title": {
     "message": "Destek"

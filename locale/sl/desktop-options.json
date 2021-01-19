@@ -243,7 +243,7 @@
     }
   },
   "options_language_tip": {
-    "message": "<strong>NASVET:</strong> Izberite samo jezike, ki jih potrebujete. Če jih izberete več, bo to upočasnilo AdBlock Plus in posledično hitrost brskanja."
+    "message": "<strong>NASVET:</strong> Izberite samo jezike, ki jih potrebujete. Če jih izberete več, bo to upočasnilo Adblock Plus in posledično hitrost brskanja."
   },
   "options_learn_more": {
     "message": "Več o tem"
@@ -274,12 +274,6 @@
   },
   "options_protection_social_tooltip": {
     "message": "Ikone družbenih omrežij na spletnih straneh ki jih obiščete, družbenim omrežjem omogočajo, da o vas ustvarijo profil glede na vaše brskalne navade - tudi če nanje ne kliknete. Skrivanje teh ikon pomaga zaščititi vaš profil."
-  },
-  "options_rating_description": {
-    "message": "Prosimo, vzemite si trenutek in nam pomagajte razširiti Adblock Plus tako, da ga ocenite. Hvala za vašo podporo!"
-  },
-  "options_rating_title": {
-    "message": "Vam je Adblock Plus všeč?"
   },
   "options_report_bug": {
     "message": "Ste našli hrošča? <a>Pošljite nam poročilo o hrošču.</a>"
@@ -347,6 +341,9 @@
   },
   "options_whitelist_empty_2": {
     "message": "Spletne strani, ki jim zaupate in na njih želite videti oglase, bodo prikazane tukaj."
+  },
+  "options_whitelist_notification": {
+    "message": "Spletni strani ste dovolili objavo oglasov."
   },
   "options_whitelist_placeholder_example": {
     "message": "npr. $domain$",

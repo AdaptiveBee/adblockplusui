@@ -6,10 +6,10 @@
     "message": "برو به نظرسنجی"
   },
   "options_acceptableAds_ads_description_1": {
-    "message": "آگهی های قابل قبول آزار دهنده نیستند و با محتوایی که مشاهده می کنید تداخل نکنید. <a> درباره معیارهای قابل قبول تبلیغات بیشتر بدانید </a>"
+    "message": "آگهی های قابل قبول آزار دهنده نیستند و با محتوایی که مشاهده می کنید تداخل نکنید. <a>درباره معیارهای قابل قبول تبلیغات بیشتر بدانید</a>"
   },
   "options_acceptableAds_ads_label": {
-    "message": "به تبلیغات قابل قبول اجازه دهید "
+    "message": "به تبلیغات قابل قبول اجازه دهید"
   },
   "options_acceptableAds_header": {
     "message": "تبلیغات قابل‌قبول"
@@ -32,6 +32,12 @@
   "options_customFilters_widget_title": {
     "message": "فهرست فیلترهای من"
   },
+  "options_customize_header": {
+    "message": "شخصی‌سازی"
+  },
+  "options_customize_iconStats": {
+    "message": "نمایش تعداد تبلیغات مسدودشده در آیکون"
+  },
   "options_customize_showNotifications": {
     "message": "نمایش اعلان های مفید"
   },
@@ -42,7 +48,7 @@
     "message": "کلیه حقوق محفوظ است. Adblock Plus® یک علامت تجاری ثبت شده eyeo GmbH است."
   },
   "options_dialog_about_version": {
-    "message": " شماره نسخه $version$",
+    "message": "شماره نسخه $version$",
     "placeholders": {
       "version": {
         "content": "$1",
@@ -59,6 +65,9 @@
   "options_dialog_import_title": {
     "message": "یک لیست فیلتر اضافه کنید"
   },
+  "options_dialog_invalid_title": {
+    "message": "خطایی رخ داد"
+  },
   "options_dialog_language_other_empty": {
     "message": "زبان‌های در دسترس وجود ندارد."
   },
@@ -67,6 +76,12 @@
   },
   "options_dialog_predefined_confirm": {
     "message": "بله، از این لیست فیلتر استفاده کنید"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "عنوان"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "نشانی اینترنتی"
   },
   "options_dialog_predefined_title": {
     "message": "آیا مطمئنید که می‌خواهید این لیست فیلتر را اضافه کنید؟"
@@ -128,6 +143,9 @@
   "options_filter_list_rule": {
     "message": "قواعد پالایش"
   },
+  "options_footer_about": {
+    "message": "درباره Adblock Plus"
+  },
   "options_footer_contribute": {
     "message": "مشارکت"
   },
@@ -142,6 +160,9 @@
   },
   "options_language_empty": {
     "message": "شما هیچ فیلتر خاصی برای زبان ندارید."
+  },
+  "options_language_filter_list": {
+    "message": "فهرست فیلترهای زبان"
   },
   "options_language_header": {
     "message": "زبان"
@@ -166,9 +187,6 @@
   },
   "options_privacy_header": {
     "message": "حریم خصوصی و امنیت"
-  },
-  "options_rating_title": {
-    "message": "از ادبلاک‌پلاس لذت می‌بری؟"
   },
   "options_social_title": {
     "message": "در تماس باشید"

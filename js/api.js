@@ -17,6 +17,31 @@
 
 "use strict";
 
+const platformToStore = new Map([
+  ["chromium", "chrome"],
+  ["edgehtml", "edge"],
+  ["gecko", "firefox"]
+]);
+
+function getInfo()
+{
+  return Promise.all([
+    app.get("application"),
+    app.get("platform")
+  ])
+  .then(([application, platform]) =>
+  {
+    let store = application;
+    // Edge and Opera have their own stores so we should refer to those instead
+    if (application !== "edge" && application !== "opera")
+    {
+      store = platformToStore.get(platform) || "chrome";
+    }
+
+    return {application, platform, store};
+  });
+}
+
 function send(type, args)
 {
   args = Object.assign({}, {type}, args);
@@ -25,6 +50,7 @@ function send(type, args)
 
 const app = {
   get: (what) => send("app.get", {what}),
+  getInfo,
   open: (what) => send("app.open", {what})
 };
 module.exports.app = app;
@@ -34,10 +60,26 @@ const doclinks = {
 };
 module.exports.doclinks = doclinks;
 
+const notifications = {
+  get: (displayMethod) => send("notifications.get", {displayMethod}),
+  seen: () => send("notifications.seen")
+};
+module.exports.notifications = notifications;
+
 const prefs = {
   get: (key) => send("prefs.get", {key})
 };
 module.exports.prefs = prefs;
+
+const subscriptions = {
+  getInitIssues: () => send("subscriptions.getInitIssues")
+};
+module.exports.subscriptions = subscriptions;
+
+const stats = {
+  getBlocked: (tab) => send("stats.getBlockedPerPage", {tab})
+};
+module.exports.stats = stats;
 
 // For now we are merely reusing the port for long-lived communications to fix
 // https://gitlab.com/eyeo/adblockplus/abpui/adblockplusui/issues/415

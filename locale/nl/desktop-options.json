@@ -1,12 +1,12 @@
 {
   "options_aa_opt_out_survey": {
-    "message": "Zou u, om ons te helpen Adblock Plus te verbeteren, willen vertellen waarom u Acceptabele advertenties heeft uitgeschakeld?"
+    "message": "Zou u, om ons te helpen Adblock Plus te verbeteren, willen vertellen waarom u Acceptabele advertenties hebt uitgeschakeld?"
   },
   "options_aa_opt_out_survey_no": {
     "message": "Nee, bedankt"
   },
   "options_aa_opt_out_survey_ok": {
-    "message": "Ga naar de enquête"
+    "message": "Naar de enquête"
   },
   "options_acceptableAds_ads_description_1": {
     "message": "Acceptabele advertenties zijn niet vervelend en geven geen verstoring met de inhoud die u bekijkt. <a>Lees meer over de criteria voor Acceptabele advertenties</a>"
@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Voer een geldige URL in"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL moet beginnen met $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
-    "message": "Een filterlijst toevoegen"
+    "message": "Filterlijst toevoegen"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Om veiligheidsredenen kunnen alleen <strong>HTTPS</strong>-filterlijsten en <strong>data</strong>-URL’s worden toegevoegd."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Fout opgetreden"
   },
   "options_dialog_language_other_empty": {
     "message": "Er zijn geen beschikbare talen."
@@ -114,10 +128,19 @@
     "message": "Een taal selecteren"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Ja, deze filterlijst gebruiken"
+    "message": "Ja, deze filterlijst toevoegen"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titel"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Weet u zeker dat u deze filterlijst wilt toevoegen?"
+  },
+  "options_donate_button": {
+    "message": "Doneren"
   },
   "options_email": {
     "message": "E-mail:"
@@ -126,7 +149,7 @@
     "message": "Engels"
   },
   "options_filterList_add": {
-    "message": "Voeg filterlijst via URL toe"
+    "message": "Filterlijst toevoegen via URL"
   },
   "options_filterList_column_name": {
     "message": "Filterlijsten"
@@ -150,16 +173,24 @@
     "message": "Mislukt, ongeldige controlesom"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Mislukt, fout bij downloaden"
+    "message": "Downloaden mislukt"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Bijwerken"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Mislukt, geen geldige filterlijst"
+    "message": "Geen geldige filterlijst"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Mislukt, geen geldig adres"
+    "message": "Geen geldig adres. Controleer de URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Download mislukt. URL moet beginnen met $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "minuten geleden"
@@ -168,7 +199,7 @@
     "message": "Zojuist"
   },
   "options_filterList_source": {
-    "message": "bron"
+    "message": "Bron"
   },
   "options_filterList_title": {
     "message": "Filterlijsten"
@@ -177,10 +208,10 @@
     "message": "alle filterlijsten bijwerken"
   },
   "options_filterList_updateNow": {
-    "message": "nu bijwerken"
+    "message": "Nu bijwerken"
   },
   "options_filterList_website": {
-    "message": "website"
+    "message": "Website"
   },
   "options_filter_list_rule": {
     "message": "Filterregel"
@@ -206,13 +237,13 @@
     "message": "O jee! Er is iets fout gegaan. Probeer het opnieuw."
   },
   "options_help_center": {
-    "message": "Zoekt u antwoord op uw vragen? <a0>Ga naar onze Helpcentrale (alleen in het Engels)</a0>"
+    "message": "Zoekt u antwoorden op uw vragen? <a0>Bezoek ons Helpcentrum (alleen in het Engels)</a0>"
   },
   "options_help_description": {
     "message": "Hulp zoeken of contact met ons opnemen"
   },
   "options_language_add": {
-    "message": "een taal toevoegen"
+    "message": "Een taal toevoegen"
   },
   "options_language_change": {
     "message": "wijzigen"
@@ -275,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Via de sociale-mediapictogrammen op de websites die u bezoekt, kunnen sociale-medianetwerken een profiel van u opbouwen op basis van uw surfgedrag - zelfs wanneer u hier niet op klikt. Het verbergen van deze knoppen kan uw profiel beschermen."
   },
-  "options_rating_description": {
-    "message": "Neem een moment en help de boodschap te verspreiden door Adblock Plus te beoordelen. Bedankt voor uw steun!"
-  },
-  "options_rating_title": {
-    "message": "Geniet u van Adblock Plus?"
+  "options_rating_button": {
+    "message": "Beoordeel ons"
   },
   "options_report_bug": {
     "message": "Een bug gevonden? <a>Stuur ons een bugrapport</a>"
@@ -292,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Contact opnemen"
+  },
+  "options_supportUs_description": {
+    "message": "Neem even de tijd om ABP te beoordelen of aan het project te doneren. Bedankt voor uw steun!"
+  },
+  "options_supportUs_title": {
+    "message": "Bevalt Adblock Plus?"
   },
   "options_support_title": {
     "message": "Ondersteuning"

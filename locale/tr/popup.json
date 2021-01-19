@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Bu web sitesindeki belirli bir öğeyi bloke edin"
+  },
   "click_element_to_block_it": {
     "message": "Sayfada engellemek istediğiniz ögenin üzerine tıklayın."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Adblock Plus’ın mobil versiyonunu denemek ister misiniz?"
   },
+  "refresh_this_page": {
+    "message": "Bu sayfayı yenile"
+  },
   "refresh_to_take_effect": {
-    "message": "Değişiklikleri etkinleştirmek için <strong>Tazele</strong>'ye tıklayın."
+    "message": "Değişikliklerin uygulanması için aşağıdaki düğmeye tıklayın."
   },
   "sendReport": {
-    "message": "Sorun bildir"
+    "message": "Bu sayfadaki bir sorunu bildirin"
+  },
+  "share_on_facebook": {
+    "message": "Facebook'ta paylaş"
+  },
+  "share_on_twitter": {
+    "message": "Twitter'da paylaş"
+  },
+  "share_on_twitter_message": {
+    "message": "Adblock Plus ile $number$ reklamı engelledim. Sen de dene. ÜCRETSİZ!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Weibo'da paylaşın"
+  },
+  "share_on_weibo_message": {
+    "message": "Adblock Plus ile $number$ reklamı engelledim. Sen de dene. ÜCRETSİZ!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Sayıları arkadaşlarınızla paylaşın"
   },
   "stats_header": {
     "message": "Engellenen ögelerin sayısı"
   },
   "stats_label_page": {
-    "message": "Bu sayfada <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "bu sayfada"
   },
   "stats_label_total": {
-    "message": "Toplamda <strong>$number$</strong>",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "toplam"
+  },
+  "status_domain": {
+    "message": "Bu web sitesi:"
   },
   "status_header": {
-    "message": "Aşağıdaki adreste reklamları engelle:"
+    "message": "Şurada reklamları engelle"
+  },
+  "status_page": {
+    "message": "Bu sayfa:"
   }
 }

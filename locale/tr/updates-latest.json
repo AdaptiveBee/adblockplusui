@@ -1,0 +1,35 @@
+{
+  "notification_updates_message": {
+    "message": "Hiçbir işlem gerekli değil. Can sıkıcı reklamlar olmadan internet'te gezinmeye devam edin! <a>Yenilikleri görün</a>"
+  },
+  "notification_updates_title": {
+    "message": "Adblock Plus artık güncellendi"
+  },
+  "updates_update_i1_description": {
+    "message": "Öğe Engelle özelliğine kısa bir açıklama eklendi ve Bildir düğmesinin anlatım biçimi iyileştirildi."
+  },
+  "updates_update_i1_title": {
+    "message": "ABP kullanıcı arayüzü artık birazcık daha kullanıcı dostu"
+  },
+  "updates_update_i2_description": {
+    "message": "Öğe Engelle özelliğine kısa talimatlar ekledik ve zorla giren öğe olmadan sayfanın nasıl görüneceğine ilişkin bir önizleme koyduk; yani kullanımını sizin için kolaylaştırdık. Deneyin ve görün!"
+  },
+  "updates_update_i2_image": {
+    "message": "Yeniden tasarlanmış \"Öğe engelle\" düğmesinin olduğu simge açılır penceresine bir örnek."
+  },
+  "updates_update_i2_title": {
+    "message": "Öğe Engelle özelliği güncellendi ve iyileştirildi"
+  },
+  "updates_update_i3_description": {
+    "message": "Uzun filtreler artık, CSS seçici dahil olmak üzere tamamen görüntülenebiliyor."
+  },
+  "updates_update_i3_title": {
+    "message": "Geliştirici araçları paneli araç çubuğu daha uzun hale getirildi"
+  },
+  "updates_update_i4_description": {
+    "message": "Simge artık kullanıcılara bildirim iletmek için yanıp sönüyor ve mavi renk alıyor."
+  },
+  "updates_update_i4_title": {
+    "message": "ABP görev çubuğu simgesi bildirimleri daha belirgin ve ayırt edilebilir hale getirildi"
+  }
+}

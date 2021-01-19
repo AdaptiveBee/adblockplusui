@@ -104,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "أدخل رابط URL صحيحًا"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "يجب أن يبدأ عنوان URL بـ $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "إضافة قائمة عوامل تصفية"
+  },
+  "options_dialog_invalid_message": {
+    "message": "لأسباب تتعلق بالأمان، يمكن إضافة قوائم عامل تصفية <strong>HTTPS</strong> وعناوين URL <strong>للبيانات</strong> فقط."
+  },
+  "options_dialog_invalid_title": {
+    "message": "حدث خطأ"
   },
   "options_dialog_language_other_empty": {
     "message": "لا يوجد لغات متوفرة."
@@ -114,10 +128,19 @@
     "message": "حدد لغة"
   },
   "options_dialog_predefined_confirm": {
-    "message": "نعم، استخدم قائمة الفلاتر هذه"
+    "message": "نعم، أضف قائمة التصفية هذه"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "العنوان"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "عنوان URL"
   },
   "options_dialog_predefined_title": {
     "message": "هل أنت بالتأكيد تريد إضافة قائمة عوامل التصفية هذه؟"
+  },
+  "options_donate_button": {
+    "message": "تبرّع"
   },
   "options_email": {
     "message": "البريد الإلكتروني:"
@@ -150,16 +173,24 @@
     "message": "فشل الأمر، عدم تطابق المجموع الإختباري"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "فشل الأمر، بسبب فشل التحميل"
+    "message": "فشل التنزيل"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "تحديث"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "فشل الأمر، قائمة الفلاتر غير صحيحة"
+    "message": "قائمة عامل تصفية غير صالحة"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "فشل الأمر، العنوان ليس صحيح"
+    "message": "عنوان غير صالح. تحقق من عنوان URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "فشل التنزيل. يجب أن يبدأ عنوان URL بـ $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "منذ دقائق"
@@ -177,10 +208,13 @@
     "message": "تحديث كل قوائم عوامل التصفية"
   },
   "options_filterList_updateNow": {
-    "message": "تحديث الآن"
+    "message": "حدّث الآن"
   },
   "options_filterList_website": {
-    "message": "مواقع الويب"
+    "message": "موقع الويب"
+  },
+  "options_filter_list_rule": {
+    "message": "قاعدة عامل تصفية"
   },
   "options_filters_search_or_add": {
     "message": "بحث / إضافة فلتر (مثال $filter$)",
@@ -272,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "تتيح رموز مواقع التواصل الاجتماعي التي تظهر في مواقع الويب لك زيارة شبكات مواقع التواصل الاجتماعي لإنشاء بروفايل شخصي لك استنادًا إلى عاداتك في التصفح - حتى عندما لا تنقر فوق تلك الأزرار أو الرموز. يمكن حماية بروفايلك الشخصي من خلال إخفاء تلك الرموز."
   },
-  "options_rating_description": {
-    "message": "الرجاء قضاء بعض الوقت والمساعدة في التعبير عن رأيك عن طريق تقييم Adblock Plus. شكرًا لك على دعمك!"
-  },
-  "options_rating_title": {
-    "message": "هل تستمع بـ Adblock Plus؟"
+  "options_rating_button": {
+    "message": "قيّمنا"
   },
   "options_report_bug": {
     "message": "هل وجدت خطأ برمجيًا؟ <a>أرسل لنا تقريرًا بالخطأ البرمجي</a>"
@@ -289,6 +320,12 @@
   },
   "options_social_title": {
     "message": "تواصل معنا"
+  },
+  "options_supportUs_description": {
+    "message": "الرجاء تخصيص بعض الوقت لتقييم Adblock Plus أو التبرع لصالح المشروع. شكرًا لك لما تقدّمه من دعم!"
+  },
+  "options_supportUs_title": {
+    "message": "هل تجد Adblock Plus ممتعًا؟"
   },
   "options_support_title": {
     "message": "الدعم"

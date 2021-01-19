@@ -71,6 +71,9 @@
   "issueReporter_markIssueButton_label": {
     "message": "Отметить проблему"
   },
+  "issueReporter_other_issues": {
+    "message": "В случае возникновения любых других проблем свяжитесь с нами по адресу <a0>support@adblockplus.org</a0>."
+  },
   "issueReporter_page_title": {
     "message": "Сообщить о проблеме"
   },

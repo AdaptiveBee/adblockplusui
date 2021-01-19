@@ -3,7 +3,7 @@
     "message": "Afin de nous aider à améliorer Adblock Plus, accepteriez-vous de nous indiquer les raisons pour lesquelles vous avez supprimé l'option pour la publicité acceptable ?"
   },
   "options_aa_opt_out_survey_no": {
-    "message": "Non merci"
+    "message": "Non, merci"
   },
   "options_aa_opt_out_survey_ok": {
     "message": "Accéder à l’enquête"
@@ -24,7 +24,7 @@
     "message": "PUBLICITÉ ACCEPTABLE"
   },
   "options_acceptableAds_privacy_label": {
-    "message": "Autoriser seulement les annonces sans traçage tiers"
+    "message": "Autoriser seulement les publicités sans traçage tiers"
   },
   "options_advanced_description": {
     "message": "Personnalisez Adblock Plus, ajoutez ou supprimez des listes de filtres, créez et maintenez vos propres listes de filtres"
@@ -74,6 +74,15 @@
   "options_customize_showNotifications_tooltip": {
     "message": "Autoriser les notifications provenant d’Adblock Plus (les notifications liées à des problèmes de performance critiques s'afficheront toujours)."
   },
+  "options_dialog_about_copyright": {
+    "message": "Copyright © $currentYear$ <a0>eyeo GmbH</a0>.",
+    "placeholders": {
+      "currentYear": {
+        "content": "$1",
+        "example": "2017"
+      }
+    }
+  },
   "options_dialog_about_title": {
     "message": "À propos d'Adblock Plus"
   },
@@ -95,8 +104,22 @@
   "options_dialog_import_subscription_location_error": {
     "message": "Saisissez une URL valide"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "L'URL doit commencer par $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "Ajouter une liste de filtres"
+  },
+  "options_dialog_invalid_message": {
+    "message": "Pour des raisons de sécurité, seules des listes de filtres <strong>HTTPS</strong> et des URL de <strong>données</strong> peuvent être ajoutées."
+  },
+  "options_dialog_invalid_title": {
+    "message": "Une erreur s'est produite"
   },
   "options_dialog_language_other_empty": {
     "message": "Il n’y a pas de langues disponibles."
@@ -105,10 +128,19 @@
     "message": "Sélectionner une langue"
   },
   "options_dialog_predefined_confirm": {
-    "message": "Oui, utilisez cette liste de filtres"
+    "message": "Oui, ajoutez cette liste de filtres"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "Titre"
+  },
+  "options_dialog_predefined_subscription_url": {
+    "message": "URL"
   },
   "options_dialog_predefined_title": {
     "message": "Voulez-vous vraiment ajouter cette liste de filtres ?"
+  },
+  "options_donate_button": {
+    "message": "Faites un don"
   },
   "options_email": {
     "message": "E-mail :"
@@ -141,16 +173,24 @@
     "message": "Échec, le checksum ne correspond pas"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "Échec, erreur lors du téléchargement !"
+    "message": "Échec du téléchargement"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "Mise à jour en cours"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "Échec, ceci n'est pas une liste de filtres valide"
+    "message": "Liste de filtres non valide"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "Échec, ceci n'est pas une adresse valide !"
+    "message": "Adresse non valide. Vérifiez l'URL."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "Échec du téléchargement. L'URL doit commencer par $protocol$.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "Il y a minutes"
@@ -193,6 +233,9 @@
   "options_general_description": {
     "message": "Déterminez les éléments qu’Adblock Plus affiche et masque sur les sites web"
   },
+  "options_generic_error": {
+    "message": "Oh non ! Quelque chose s'est mal passé. Réessaie plus tard."
+  },
   "options_help_center": {
     "message": "Vous recherchez des réponses à vos questions ? <a0>Consultez notre Centre d'aide (en anglais uniquement)</a0>"
   },
@@ -216,6 +259,19 @@
   },
   "options_language_header": {
     "message": "Langue"
+  },
+  "options_language_join": {
+    "message": "$lang1$, $lang2$",
+    "placeholders": {
+      "lang1": {
+        "content": "$1",
+        "example": "čeština"
+      },
+      "lang2": {
+        "content": "$2",
+        "example": "slovenčina"
+      }
+    }
   },
   "options_language_tip": {
     "message": "<strong>CONSEIL :</strong> Sélectionnez uniquement les langues dont vous avez besoin. Si vous en sélectionnez plus, le bloqueur de publicité sera ralenti, ce qui ralentira donc votre vitesse de navigation."
@@ -250,11 +306,8 @@
   "options_protection_social_tooltip": {
     "message": "Les icônes des médias sociaux sur les sites web que vous consultez permettent aux réseaux de médias sociaux de construire votre profil en fonction de vos habitudes de navigation, même si vous ne cliquez pas dessus. En masquant ces icônes, vous pouvez protéger votre profil."
   },
-  "options_rating_description": {
-    "message": "Merci de prendre un moment pour nous aider à diffuser en attribuant une note. Merci pour votre aide !"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus vous intéresse ?"
+  "options_rating_button": {
+    "message": "Évaluez-nous"
   },
   "options_report_bug": {
     "message": "Vous avez trouvé un bogue ? <a>Envoyez-nous un rapport de bogue</a>"
@@ -267,6 +320,12 @@
   },
   "options_social_title": {
     "message": "Nous contacter"
+  },
+  "options_supportUs_description": {
+    "message": "Veuillez nous accordez un instant pour évaluer ABP ou faire un don au projet. Nous vous remercions de votre soutien !"
+  },
+  "options_supportUs_title": {
+    "message": "Vous aimez Adblock Plus ?"
   },
   "options_support_title": {
     "message": "Support"

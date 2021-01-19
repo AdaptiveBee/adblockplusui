@@ -1,4 +1,7 @@
 {
+  "block_element_description": {
+    "message": "Specifiek element op deze website blokkeren"
+  },
   "click_element_to_block_it": {
     "message": "Klik op een element op de pagina om het te blokkeren."
   },
@@ -20,32 +23,59 @@
   "promote_abp_module": {
     "message": "Interesse in Adblock Plus op mobiel?"
   },
+  "refresh_this_page": {
+    "message": "Deze pagina vernieuwen"
+  },
   "refresh_to_take_effect": {
-    "message": "Klik op <strong>Vernieuwen</strong> om de wijzigingen toe te passen."
+    "message": "Klik op de knop hieronder om wijzigingen door te voeren."
   },
   "sendReport": {
-    "message": "Probleem melden"
+    "message": "Een probleem op deze pagina melden"
+  },
+  "share_on_facebook": {
+    "message": "Delen op Facebook"
+  },
+  "share_on_twitter": {
+    "message": "Delen op Twitter"
+  },
+  "share_on_twitter_message": {
+    "message": "Ik heb reclame geblokkeerd $number$ met Adblock Plus. Probeer het eens - het is GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "share_on_weibo": {
+    "message": "Delen op Weibo"
+  },
+  "share_on_weibo_message": {
+    "message": "Ik heb $number$ advertenties geblokkeerd met Adblock Plus. Probeer het eens - het is GRATIS!",
+    "placeholders": {
+      "number": {
+        "content": "$1"
+      }
+    }
+  },
+  "social_media_share": {
+    "message": "Aantallen delen met vrienden"
   },
   "stats_header": {
     "message": "Aantal geblokkeerde items"
   },
   "stats_label_page": {
-    "message": "<strong>$number$</strong> op deze pagina",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "op deze pagina"
   },
   "stats_label_total": {
-    "message": "<strong>$number$</strong> in totaal",
-    "placeholders": {
-      "number": {
-        "content": "$1"
-      }
-    }
+    "message": "in totaal"
+  },
+  "status_domain": {
+    "message": "Deze website:"
   },
   "status_header": {
-    "message": "Advertenties blokkeren op:"
+    "message": "Advertenties blokkeren op"
+  },
+  "status_page": {
+    "message": "Deze pagina:"
   }
 }

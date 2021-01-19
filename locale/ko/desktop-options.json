@@ -53,6 +53,9 @@
   "options_customize_header": {
     "message": "사용자 설정"
   },
+  "options_customize_iconStats": {
+    "message": "아이콘에 차단된 광고 개수를 보여줍니다."
+  },
   "options_customize_showDevToolsPanel": {
     "message": "개발자 도구 패널에서 'Adblock Plus’ 패널을 표시합니다."
   },
@@ -92,17 +95,40 @@
   "options_dialog_import_subscription_location_error": {
     "message": "유효한 URL을 입력하세요"
   },
+  "options_dialog_import_subscription_location_error_protocol": {
+    "message": "URL은 $protocol$로 시작해야 합니다.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
+  },
   "options_dialog_import_title": {
     "message": "필터 목록 추가"
+  },
+  "options_dialog_invalid_message": {
+    "message": "보안상의 이유로 <strong>HTTPS</strong> 필터 목록 및 <strong>데이터</strong> URL만 추가 가능합니다."
+  },
+  "options_dialog_invalid_title": {
+    "message": "오류 발생"
+  },
+  "options_dialog_language_other_empty": {
+    "message": "가능한 언어가 없습니다."
   },
   "options_dialog_language_title": {
     "message": "언어 선택"
   },
   "options_dialog_predefined_confirm": {
-    "message": "예, 이 필터 목록을 사용합니다"
+    "message": "예, 이 필터 목록을 추가합니다"
+  },
+  "options_dialog_predefined_subscription_title": {
+    "message": "제목"
   },
   "options_dialog_predefined_title": {
     "message": "이 필터 목록을 추가하길 원하십니까?"
+  },
+  "options_donate_button": {
+    "message": "기부하기"
   },
   "options_email": {
     "message": "이메일:"
@@ -135,16 +161,24 @@
     "message": "실패함 : 검사합 불일치"
   },
   "options_filterList_lastDownload_connectionError": {
-    "message": "실패함 : 다운로드 실패"
+    "message": "다운로드 실패"
   },
   "options_filterList_lastDownload_inProgress": {
     "message": "업데이트중"
   },
   "options_filterList_lastDownload_invalidData": {
-    "message": "실패함: 올바르지 않은 필터"
+    "message": "올바르지 않은 필터 리스트"
   },
   "options_filterList_lastDownload_invalidURL": {
-    "message": "실패함 : 올바르지 않은 주소"
+    "message": "올바른 주소가 아닙니다. URL을 확인하세요."
+  },
+  "options_filterList_lastDownload_invalidURLProtocol": {
+    "message": "다운로드에 실패하였습니다. URL은 $protocol$로 시작해야 합니다.",
+    "placeholders": {
+      "protocol": {
+        "content": "https://"
+      }
+    }
   },
   "options_filterList_minutes": {
     "message": "분 전"
@@ -162,10 +196,13 @@
     "message": "모든 필터 목록 업데이트"
   },
   "options_filterList_updateNow": {
-    "message": "지금 업데이트"
+    "message": "지금 업데이트 하기"
   },
   "options_filterList_website": {
     "message": "웹사이트"
+  },
+  "options_filter_list_rule": {
+    "message": "필터 규칙"
   },
   "options_footer_about": {
     "message": "Adblock Plus 정보"
@@ -236,11 +273,8 @@
   "options_protection_social_tooltip": {
     "message": "방문한 웹사이트의 소셜 미디어 아이콘을 통해 소셜 미디어 네트워크는 사용자의 브라우징 습관을 바탕으로 사용자의 프로필을 구축합니다. 사용자가 클릭하지 않아도 이 작업은 진행됩니다. 이러한 아이콘을 숨김으로써 사용자의 프로필을 보호할 수 있습니다."
   },
-  "options_rating_description": {
-    "message": "잠시 시간을 내어 Adblock Plus를 평가해서 입소문을 내주세요. 지원해 주셔서 감사합니다!"
-  },
-  "options_rating_title": {
-    "message": "Adblock Plus가 마음에 드셨나요?"
+  "options_rating_button": {
+    "message": "평가하기"
   },
   "options_report_bug": {
     "message": "버그를 찾으셨습니까? <a>버그 리포트 보내기</a>"
@@ -253,6 +287,12 @@
   },
   "options_social_title": {
     "message": "연락하기"
+  },
+  "options_supportUs_description": {
+    "message": "잠시 시간을 내어 ABP를 평가해주시거나 프로젝트에 기부해주세요. 지원해주셔서 감사합니다!"
+  },
+  "options_supportUs_title": {
+    "message": "Adblock Plus가 유용한가요?"
   },
   "options_support_title": {
     "message": "지원"

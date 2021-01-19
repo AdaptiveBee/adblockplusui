@@ -1,8 +1,8 @@
 {
-  "overlay_notification_button_no": {
-    "message": "Ոչ"
+  "notification_configure": {
+    "message": "Կարգավորել ծանուցման կայանքները"
   },
-  "overlay_notification_button_yes": {
-    "message": "Այո"
+  "notification_open_all": {
+    "message": "Բացել բոլոր հղումները այս ծանուցումից"
   }
 }
